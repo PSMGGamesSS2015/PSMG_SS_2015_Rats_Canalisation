@@ -209,7 +209,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f8ba9889779dad4f9d14227ccc18bdd, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &65263868 stripped
+--- !u!4 &65263868
 Transform:
   m_PrefabParentObject: {fileID: 423174, guid: 078e5073d4207f3438951e2b8c770414, type: 2}
   m_PrefabInternal: {fileID: 939715630}
@@ -1534,7 +1534,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435272158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &451742766 stripped
+--- !u!4 &451742766
 Transform:
   m_PrefabParentObject: {fileID: 456272, guid: 1e4cea292ac6b0044985264bb57d19ea, type: 2}
   m_PrefabInternal: {fileID: 1006617129}
@@ -2813,7 +2813,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a60d138d8cbb870489e7df06f75914ec, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &885493140 stripped
+--- !u!1 &885493140
 GameObject:
   m_PrefabParentObject: {fileID: 138180, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
   m_PrefabInternal: {fileID: 399374813}
@@ -2829,10 +2829,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+  runSpeed: 5
+  slowSpeed: 1
   movementSpeed: 3
   jumpSpeed: 200
   RayCastLength: 1
   isGrounded: 0
+  maxSlope: 60
 --- !u!54 &885493142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2848,7 +2851,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!4 &885493146 stripped
+--- !u!4 &885493146
 Transform:
   m_PrefabParentObject: {fileID: 405288, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
   m_PrefabInternal: {fileID: 399374813}
@@ -3208,7 +3211,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a60d138d8cbb870489e7df06f75914ec, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &995335673 stripped
+--- !u!4 &995335673
 Transform:
   m_PrefabParentObject: {fileID: 492044, guid: 6f8ba9889779dad4f9d14227ccc18bdd, type: 2}
   m_PrefabInternal: {fileID: 684755270}
@@ -3382,7 +3385,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e4cea292ac6b0044985264bb57d19ea, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1019684718 stripped
+--- !u!4 &1019684718
 Transform:
   m_PrefabParentObject: {fileID: 498434, guid: a60d138d8cbb870489e7df06f75914ec, type: 2}
   m_PrefabInternal: {fileID: 474554532}
@@ -6112,7 +6115,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a60d138d8cbb870489e7df06f75914ec, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1919283495 stripped
+--- !u!4 &1919283495
 Transform:
   m_PrefabParentObject: {fileID: 443036, guid: 9468ff2a6967ed443900822e5da4a14d, type: 2}
   m_PrefabInternal: {fileID: 1823045722}
