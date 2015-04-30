@@ -16,13 +16,15 @@ public class RatMovement : MonoBehaviour {
 	
 	void FixedUpdate()
 	{
-		float horizontalInput = Input.GetAxis("Horizontal");
-		float verticalInput = Input.GetAxis("Vertical");	
-		
+		float horizontalInput = Input.GetAxis("Mouse X");
+		float verticalInput = Input.GetAxis("Vertical");
+		float sidewaysInput = Input.GetAxis ("Horizontal");
         Jump();
+
+		Turn(horizontalInput);
+		Sideways (sidewaysInput);//No function as far
 		Move(verticalInput);
-		if (isGrounded)
-			Turn(horizontalInput);
+
         Run();
         Sneak();
         NormalizeSpeed();
@@ -68,6 +70,13 @@ public class RatMovement : MonoBehaviour {
     {
         isGrounded = false;
     }
+
+	private void Sideways(float inputSignal)
+	{
+		Vector3 newPosition = transform.right.normalized * inputSignal * movementSpeed * Time.deltaTime;
+		
+		GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
+	}
 
     private void Jump()
     {

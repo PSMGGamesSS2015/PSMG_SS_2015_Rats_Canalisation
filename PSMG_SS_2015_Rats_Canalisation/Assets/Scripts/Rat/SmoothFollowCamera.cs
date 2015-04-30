@@ -7,23 +7,30 @@ public class SmoothFollowCamera : MonoBehaviour
     // The target we are following
     public Transform target;
     // The distance in the x-z plane to the target
-    public float distance = 10.0f;
+    public float distance = 20.0f;
     // the height we want the camera to be above the target
     public float height = 5.0f;
     // How much we
     public float Damping = 4.0f;
+	public float rotationSpeed = 1f;
+	// Default Value for is first person view active
+	public bool firstPerson = false;
 
     void LateUpdate()
     {
         // Early out if we don't have a target
         if (!target)
             return;
-
+		
         Vector3 CameraFinalPosition = new Vector3();
         Vector3 DirPlayerToCamera = new Vector3();
 
-        CameraFinalPosition = target.position - (target.forward * distance);
-        CameraFinalPosition += Vector3.up * height;
+		if (!firstPerson) {//Third Person Settings
+			CameraFinalPosition = target.position - (target.forward * 2 * distance);
+			CameraFinalPosition += Vector3.up * height;
+		} else {//First Person Settings
+			CameraFinalPosition = target.position;
+		}
 
         DirPlayerToCamera = CameraFinalPosition - target.position;
         DirPlayerToCamera.Normalize();
@@ -42,4 +49,25 @@ public class SmoothFollowCamera : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
         transform.LookAt(target);
     }
+
+	void FixedUpdate(){
+		float camInput = Input.GetAxis ("Mouse Y");
+
+		upDown (camInput);
+		selectPosition ();
+	}
+
+	public void upDown ( float InputSignal){//Move Camera up and down 
+		float angle = Input.GetAxis("Mouse Y")*rotationSpeed;
+		transform.Rotate (-angle,0,0);
+	}
+
+	public void selectPosition(){//Select the View Type
+		if (Input.GetKeyDown (KeyCode.V)) {
+			if(!firstPerson)
+				firstPerson = true;
+			else
+				firstPerson = false;
+		}
+	}
 }
