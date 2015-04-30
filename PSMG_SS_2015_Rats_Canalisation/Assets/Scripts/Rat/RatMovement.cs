@@ -17,13 +17,12 @@ public class RatMovement : MonoBehaviour {
 	void FixedUpdate()
 	{
 		float horizontalInput = Input.GetAxis("Mouse X");
-		float verticalInput = Input.GetAxis("Vertical");
-		float sidewaysInput = Input.GetAxis ("Horizontal");
+		float moveVertical = Input.GetAxis("Vertical");
+		float moveHorizontal = Input.GetAxis ("Horizontal");
         Jump();
 
 		Turn(horizontalInput);
-		Sideways (sidewaysInput);//No function as far
-		Move(verticalInput);
+		Move(moveVertical, moveHorizontal);
 
         Run();
         Sneak();
@@ -71,13 +70,6 @@ public class RatMovement : MonoBehaviour {
         isGrounded = false;
     }
 
-	private void Sideways(float inputSignal)
-	{
-		Vector3 newPosition = transform.right.normalized * inputSignal * movementSpeed * Time.deltaTime;
-		
-		GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
-	}
-
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -86,11 +78,19 @@ public class RatMovement : MonoBehaviour {
         }
     }
 	
-	private void Move(float inputSignal)
+	private void Move(float vertical, float horizontal)
 	{
-		Vector3 newPosition = transform.forward.normalized * inputSignal * movementSpeed * Time.deltaTime;
+		if (horizontal != 0) {
+			Vector3 newPosition = transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
+			
+			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
+		}
+		if (vertical != 0) {
+			Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
 		
-		GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
+			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
+		}
+
 	}
 	
 	private void Turn(float inputSignal)
