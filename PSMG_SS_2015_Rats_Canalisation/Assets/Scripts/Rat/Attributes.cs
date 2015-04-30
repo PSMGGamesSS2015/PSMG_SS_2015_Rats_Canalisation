@@ -27,4 +27,9 @@ public class Attributes : MonoBehaviour {
 	public int GetCurrentHunger(){
 		return hunger;
 	}
+
+	public int GetCurrentLife(){
+		return health;
+	}
+
 }
