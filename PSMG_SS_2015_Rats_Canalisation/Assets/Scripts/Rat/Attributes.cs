@@ -8,6 +8,8 @@ public class Attributes : MonoBehaviour {
 	private int hunger;
 	private float pastTime = 0;
 	public int timeToHeal = 5; //in seconds
+	private static int normalHealing = 1;
+	private static int betterHealing = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -18,13 +20,19 @@ public class Attributes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		pastTime += Time.deltaTime;
-		if (pastTime > timeToHeal) {//Heal
-			int Healnumber = 1;
+		if (pastTime > timeToHeal) {//Heal from time to time
+			int Healnumber = normalHealing;
 			if( hunger == maxHunger){
-				Healnumber = 2;
+				Healnumber = betterHealing;
 			}
 			ChangeLife(Healnumber);
 			pastTime -= timeToHeal;
+		}
+		if (health <= 0) {//If the player dies
+			health =  maxHealth;
+			hunger = maxHunger;
+			Vector3 newPos = new Vector3(0, 0, 0);
+			this.transform.position = newPos;
 		}
 	}
 

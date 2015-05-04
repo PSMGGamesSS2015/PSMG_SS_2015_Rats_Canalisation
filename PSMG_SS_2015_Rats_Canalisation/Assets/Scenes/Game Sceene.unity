@@ -1538,6 +1538,18 @@ Prefab:
       propertyPath: m_Name
       value: Rat - Player
       objectReference: {fileID: 0}
+    - target: {fileID: 405288, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 405288, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 405288, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 701a64a39613ded44bce13d08fa29759, type: 2}
   m_IsPrefabParent: 0
