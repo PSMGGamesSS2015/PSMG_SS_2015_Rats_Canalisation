@@ -22,7 +22,7 @@ public class HungerText : MonoBehaviour {
 	void Update () {
 
 		pastTime += Time.deltaTime;
-		if (pastTime > timeToDropHungerOneValue) {
+		if (pastTime > timeToDropHungerOneValue) {//Drop Hunger
 			if(hungerCounter > 0){
 				hungerCounter--;
 				GameObject player = GameObject.FindGameObjectWithTag("Player");

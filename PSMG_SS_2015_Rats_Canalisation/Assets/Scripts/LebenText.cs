@@ -15,20 +15,17 @@ public class LebenText : MonoBehaviour {
 		instruction = GetComponent<Text>();
 		instructionChar = instruction.text[8];
 		lifeCounter = (int)instructionChar - '0';
-		setNewText ();
+		int maxLife = GameObject.FindGameObjectWithTag ("Player").GetComponent<Attributes> ().GetCurrentLife();
+		setNewText (maxLife);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 	
-	public void setNewText(){
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		int currentHunger = player.GetComponent<Attributes>().GetCurrentLife();
-		instruction.text = instruction.text.Substring (0, 7) + currentHunger;
+	public void setNewText(int health){
+		instruction.text = instruction.text.Substring (0, 7) + health;
 	}
-	
-	public void updateLife(){
-		setNewText ();
-	}
+
+
 }
