@@ -13,10 +13,13 @@ ModelImporter:
     400004: K_se_MeshPart1
     2300000: K_se_MeshPart0
     2300002: K_se_MeshPart1
+    2300004: //RootNode
     3300000: K_se_MeshPart0
     3300002: K_se_MeshPart1
+    3300004: //RootNode
     4300000: K_se_MeshPart0
     4300002: K_se_MeshPart1
+    4300004: K_se
     7400000: Default Take
     9500000: //RootNode
   materials:
