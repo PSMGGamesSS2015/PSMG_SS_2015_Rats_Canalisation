@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Lifetext
   - Gitter
+  - Hungertext
+  - Hindrance Glas
   layers:
   - Default
   - TransparentFX
