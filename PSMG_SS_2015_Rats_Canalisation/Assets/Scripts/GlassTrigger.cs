@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CheeseTrigger : MonoBehaviour {
+public class GlassTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +15,8 @@ public class CheeseTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
-			GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().gotCheese ();
-			Destroy (gameObject);
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-1);
 		}
-
+		
 	}
 }

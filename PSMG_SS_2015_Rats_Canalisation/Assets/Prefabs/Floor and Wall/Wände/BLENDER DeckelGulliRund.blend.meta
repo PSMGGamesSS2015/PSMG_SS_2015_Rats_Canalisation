@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-guid: db5791b347ac9b74b9beeff124ff8b33
-timeCreated: 1430327607
+guid: 8ae183048561fdb4a9c65f4e4cc4a571
+timeCreated: 1430487698
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: K_se_MeshPart0
-    100004: K_se_MeshPart1
     400000: //RootNode
-    400002: K_se_MeshPart0
-    400004: K_se_MeshPart1
-    2300000: K_se_MeshPart0
-    2300002: K_se_MeshPart1
-    2300004: //RootNode
-    3300000: K_se_MeshPart0
-    3300002: K_se_MeshPart1
-    3300004: //RootNode
-    4300000: K_se_MeshPart0
-    4300002: K_se_MeshPart1
-    4300004: K_se
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: DeckeGulliRund
     7400000: Default Take
     9500000: //RootNode
   materials:
