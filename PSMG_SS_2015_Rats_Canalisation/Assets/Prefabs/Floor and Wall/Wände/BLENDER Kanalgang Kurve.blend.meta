@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Weltabschnitt_Kanalgang_Kurve
+    4300002: Weltabschnitt_Kanalgang_Gerade
     7400000: Default Take
     9500000: //RootNode
   materials:
