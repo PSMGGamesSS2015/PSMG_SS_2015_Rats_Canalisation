@@ -9,6 +9,7 @@ TagManager:
   - Hungertext
   - Hindrance Glas
   - "K\xE4se"
+  - Gegner1
   layers:
   - Default
   - TransparentFX
