@@ -13,20 +13,28 @@ public class RatMovement : MonoBehaviour {
 	public bool isGrounded = false;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
+
+	// Use this for initialization
+	void Start () {	
+	}
 	
+	// Update is called once per frame
+	void Update () {
+		Jump ();
+		Run();
+		Sneak();
+		NormalizeSpeed();
+		
+	}
+
 	void FixedUpdate()
 	{
 		float horizontalInput = Input.GetAxis("Mouse X");
 		float moveVertical = Input.GetAxis("Vertical");
 		float moveHorizontal = Input.GetAxis ("Horizontal");
-        Jump();
-
 		Turn(horizontalInput);
-		Move(moveVertical, moveHorizontal);
-
-        Run();
-        Sneak();
-        NormalizeSpeed();
+		MoveHorizontal (moveHorizontal);
+		MoveVertical (moveVertical);
 	}
 
     private void Run()
@@ -78,19 +86,19 @@ public class RatMovement : MonoBehaviour {
         }
     }
 	
-	private void Move(float vertical, float horizontal)
+	private void MoveHorizontal(float horizontal)
 	{
 		if (horizontal != 0) {
-			Vector3 newPosition = transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
-			
+			Vector3 newPosition = transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;	
 			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
 		}
-		if (vertical != 0) {
-			Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
-		
-			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
-		}
+	}
 
+	private void MoveVertical(float vertical){
+		if (vertical != 0) {
+			Vector3 newPosition2 = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
+			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition2);
+		}
 	}
 	
 	private void Turn(float inputSignal)
@@ -100,14 +108,5 @@ public class RatMovement : MonoBehaviour {
 	}
 	
 	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 
-	}
 }

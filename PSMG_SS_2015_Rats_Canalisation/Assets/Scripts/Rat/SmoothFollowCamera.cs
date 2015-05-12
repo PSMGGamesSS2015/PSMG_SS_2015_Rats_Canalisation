@@ -7,9 +7,9 @@ public class SmoothFollowCamera : MonoBehaviour
     // The target we are following
     public Transform target;
     // The distance in the x-z plane to the target
-    public float distance = 20.0f;
+    public float distance = 40.0f;
     // the height we want the camera to be above the target
-    public float height = 5.0f;
+    public float height = 7.0f;
     // How much we
     public float Damping = 4.0f;
 	public float rotationSpeed = 1f;
@@ -26,7 +26,7 @@ public class SmoothFollowCamera : MonoBehaviour
         Vector3 DirPlayerToCamera = new Vector3();
 
 		if (!firstPerson) {//Third Person Settings
-			CameraFinalPosition = target.position - (target.forward * 2 * distance);
+			CameraFinalPosition = target.position-target.forward*2;
 			CameraFinalPosition += Vector3.up * height;
 		} else {//First Person Settings
 			CameraFinalPosition = target.position;
@@ -50,14 +50,12 @@ public class SmoothFollowCamera : MonoBehaviour
         transform.LookAt(target);
     }
 
-	void FixedUpdate(){
-		float camInput = Input.GetAxis ("Mouse Y");
-
-		upDown (camInput);
+	void Update(){
+		upDown ();
 		selectPosition ();
 	}
 
-	public void upDown ( float InputSignal){//Move Camera up and down 
+	public void upDown (){//Move Camera up and down 
 		float angle = Input.GetAxis("Mouse Y")*rotationSpeed;
 		transform.Rotate (-angle,0,0);
 	}
