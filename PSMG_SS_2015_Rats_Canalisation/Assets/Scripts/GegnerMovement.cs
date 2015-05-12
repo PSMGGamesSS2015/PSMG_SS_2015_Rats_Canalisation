@@ -18,8 +18,8 @@ public class GegnerMovement : MonoBehaviour {
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		float dist = Vector3.Distance(player.transform.position, transform.position);
 		if (dist < reactionDistance) {
-			Vector3 newPosition2 = transform.forward.normalized * movementSpeed * Time.deltaTime;
-			transform.position = (transform.position + newPosition2);
+			Vector3 newPos = transform.forward.normalized * movementSpeed * Time.deltaTime;
+			transform.position = (transform.position + newPos);
 		}
 	}
 
