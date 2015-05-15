@@ -33,8 +33,9 @@ public class RatMovement : MonoBehaviour {
 		float moveVertical = Input.GetAxis("Vertical");
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		Turn(horizontalInput);
-		MoveHorizontal (moveHorizontal);
-		MoveVertical (moveVertical);
+        Move(moveHorizontal, moveVertical);
+		//MoveHorizontal (moveHorizontal);
+		//MoveVertical (moveVertical);
 	}
 
     private void Run()
@@ -85,7 +86,19 @@ public class RatMovement : MonoBehaviour {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
         }
     }
+
+    private void Move(float horizontal, float vertical)
+    {
+        if (horizontal != 0 || vertical != 0)
+        {
+           Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
+           newPosition += transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
+           GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
+		}
+    }
 	
+
+    /**
 	private void MoveHorizontal(float horizontal)
 	{
 		if (horizontal != 0) {
@@ -100,6 +113,7 @@ public class RatMovement : MonoBehaviour {
 			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition2);
 		}
 	}
+     */
 	
 	private void Turn(float inputSignal)
 	{
