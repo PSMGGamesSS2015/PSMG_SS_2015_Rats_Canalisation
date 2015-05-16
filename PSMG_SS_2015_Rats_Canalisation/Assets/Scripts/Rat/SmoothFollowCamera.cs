@@ -27,7 +27,7 @@ public class SmoothFollowCamera : MonoBehaviour
 
 		if (!firstPerson) {//Third Person Settings
 			CameraFinalPosition = target.position-target.forward*2;
-			CameraFinalPosition += Vector3.up * height;
+			CameraFinalPosition += Vector3.up * height*2;
 		} else {//First Person Settings
 			CameraFinalPosition = target.position;
 		}
@@ -47,7 +47,7 @@ public class SmoothFollowCamera : MonoBehaviour
         }
 
         transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
-        transform.LookAt(target);
+        if(!firstPerson)transform.LookAt(target);
     }
 
 	void Update(){
