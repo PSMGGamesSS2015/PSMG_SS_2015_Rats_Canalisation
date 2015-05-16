@@ -33,10 +33,10 @@ public class RatMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxis("Mouse X");
+        float horizontalMouseInput = Input.GetAxis("Mouse X");
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
-        Turn(horizontalInput);
+        Turn(horizontalMouseInput);
         Move(moveHorizontal, moveVertical);
     }
 
