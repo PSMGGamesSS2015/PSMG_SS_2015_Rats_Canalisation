@@ -1,42 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RatMovement : MonoBehaviour {
-	
-	public float rotationSpeed = 1f;
-	public static float generalMovementSpeed = 3f;
+public class RatMovement : MonoBehaviour
+{
+
+    public float rotationSpeed = 1f;
+    public static float generalMovementSpeed = 3f;
     public float runSpeed = 5f;
     public float slowSpeed = 1f;
-	public float movementSpeed = generalMovementSpeed;
-	public float jumpSpeed = 20f;
-	public float RayCastLength = .1f;
-	public bool isGrounded = false;
+    public float movementSpeed = generalMovementSpeed;
+    public float jumpSpeed = 20f;
+    public bool isGrounded = false;
+    public bool isAtWall = false;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
 
-	// Use this for initialization
-	void Start () {	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		Jump ();
-		Run();
-		Sneak();
-		NormalizeSpeed();
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+    }
 
-	void FixedUpdate()
-	{
-		float horizontalInput = Input.GetAxis("Mouse X");
-		float moveVertical = Input.GetAxis("Vertical");
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		Turn(horizontalInput);
+    // Update is called once per frame
+    void Update()
+    {
+        Jump();
+        Run();
+        Sneak();
+        NormalizeSpeed();
+
+
+    }
+
+    void FixedUpdate()
+    {
+        float horizontalInput = Input.GetAxis("Mouse X");
+        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        Turn(horizontalInput);
         Move(moveHorizontal, moveVertical);
-		//MoveHorizontal (moveHorizontal);
-		//MoveVertical (moveVertical);
-	}
+    }
 
     private void Run()
     {
@@ -62,20 +64,59 @@ public class RatMovement : MonoBehaviour {
         }
     }
 
-    // sets isGrounded to true, if angle between the colliding vector and the upwards Vector is smaller than maxSlope
-    // determins weather ground is jumpable
+    //called once per Collision per physics update
+    //determines whether Rat is on the Ground
+    //determines whether Rat is at a Wall 
     public void OnCollisionStay(Collision collision)
     {
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
         foreach (ContactPoint contact in collision.contacts)
         {
-            if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope){
+            Debug.DrawRay(contact.point, contact.normal, Color.green);
+            if (Vector3.Angle(contact.normal, Vector3.up) > 5f)
+            {
+                isGrounded = false;
+            }
+            else
+            {
                 isGrounded = true;
+                break;
             }
         }
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, -Vector3.up * .4f, Color.cyan);
+        if (!isGrounded && Physics.Raycast(transform.position, -Vector3.up, out hit, 0.4f, layerMask))
+        {
+            isGrounded = true;
+        }
+
+
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (Vector3.Angle(contact.normal, Vector3.up) < 85f)
+            {
+                isAtWall = false;
+            }
+            else
+            {
+                isAtWall = true;
+                break;
+            }
+        }
+
+        Debug.DrawRay(transform.position, transform.forward * .4f, Color.cyan);
+        if (isAtWall && !Physics.Raycast(transform.position, transform.forward, out hit, 0.4f, layerMask))
+        {
+            isAtWall = false;
+        }
+
     }
 
-    public void OnCollisionExit()
+
+    public void OnCollisionExit(Collision collisionInfo)
     {
+        print("No longer in contact with " + collisionInfo.transform.name);
         isGrounded = false;
     }
 
@@ -83,44 +124,34 @@ public class RatMovement : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            isGrounded = false;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
         }
     }
 
     private void Move(float horizontal, float vertical)
     {
-        if (horizontal != 0 || vertical != 0)
+        //can´t move while in the air and facing a wall to not get stuck
+        if (!isGrounded && isAtWall)
+        { }
+        else
         {
-           Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
-           newPosition += transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
-           GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
-		}
+            if (horizontal != 0 || vertical != 0)
+            {
+                Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
+                newPosition += transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
+                GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
+            }
+        }
+
     }
-	
 
-    /**
-	private void MoveHorizontal(float horizontal)
-	{
-		if (horizontal != 0) {
-			Vector3 newPosition = transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;	
-			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition);
-		}
-	}
+    private void Turn(float inputSignal)
+    {
+        float angle = inputSignal * rotationSpeed;
+        transform.Rotate(transform.up * angle);
+    }
 
-	private void MoveVertical(float vertical){
-		if (vertical != 0) {
-			Vector3 newPosition2 = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
-			GetComponent<Rigidbody> ().MovePosition (transform.position + newPosition2);
-		}
-	}
-     */
-	
-	private void Turn(float inputSignal)
-	{
-		float angle = inputSignal * rotationSpeed;
-		transform.Rotate(transform.up * angle);
-	}
-	
-	
+
 
 }
