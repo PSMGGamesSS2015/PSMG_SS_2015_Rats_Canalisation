@@ -15,7 +15,7 @@ public class CheeseTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
-			GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().gotCheese ();
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().gotCheese();
 			Destroy (gameObject);
 		}
 

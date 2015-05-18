@@ -20067,7 +20067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 7
   maxHunger: 7
-  timeToHeal: 5
+  timeToHeal: 10
+  timeToDropHungerOneValue: 10
 --- !u!1001 &885497818
 Prefab:
   m_ObjectHideFlags: 0
@@ -24348,7 +24349,6 @@ MonoBehaviour:
   instructionChar: 0
   pastTime: 0
   lifeCounter: 0
-  timeToDropHungerOneValue: 10
 --- !u!1001 &1092736146
 Prefab:
   m_ObjectHideFlags: 0
@@ -28212,7 +28212,6 @@ GameObject:
   - 92: {fileID: 1284523936}
   - 124: {fileID: 1284523935}
   - 81: {fileID: 1284523934}
-  - 114: {fileID: 1284523939}
   - 114: {fileID: 1284523940}
   m_Layer: 0
   m_Name: Main Camera
@@ -28286,17 +28285,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 885493146}
   m_RootOrder: 0
---- !u!114 &1284523939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284523933}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262dbfc2eb1d5a24e8159e871adb2a40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1284523940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28309,7 +28297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 885493146}
-  distance: 1.70000005
+  distance: 2
   height: .5
   Damping: 10
   rotationSpeed: 2
@@ -32485,7 +32473,6 @@ MonoBehaviour:
   instructionChar: 0
   pastTime: 0
   hungerCounter: 0
-  timeToDropHungerOneValue: 10
 --- !u!4 &1505231076 stripped
 Transform:
   m_PrefabParentObject: {fileID: 492044, guid: 6f8ba9889779dad4f9d14227ccc18bdd, type: 2}

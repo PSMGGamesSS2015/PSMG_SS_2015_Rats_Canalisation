@@ -7,23 +7,21 @@ public class LebenText : MonoBehaviour {
 	public char instructionChar;
 	public float pastTime;
 	public int lifeCounter;
-	public int timeToDropHungerOneValue = 10; //in seconds
-	
 	
 	// Use this for initialization
 	void Start () {
 		instruction = GetComponent<Text>();
 		instructionChar = instruction.text[8];
 		lifeCounter = (int)instructionChar - '0';
-		int maxLife = GameObject.FindGameObjectWithTag ("Player").GetComponent<Attributes> ().GetCurrentLife();
-		setNewText (maxLife);
+		setNewText ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 	
-	public void setNewText(int health){
+	public void setNewText(){
+		int health = GameObject.FindGameObjectWithTag ("Player").GetComponent<Attributes> ().GetCurrentLife();
 		instruction.text = instruction.text.Substring (0, 7) + health;
 	}
 

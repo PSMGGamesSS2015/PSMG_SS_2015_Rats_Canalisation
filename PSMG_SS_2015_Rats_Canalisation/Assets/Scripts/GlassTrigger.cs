@@ -15,7 +15,7 @@ public class GlassTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-1);
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-3);
 		}
 		
 	}

@@ -7,9 +7,11 @@ public class Attributes : MonoBehaviour {
 	private int health;
 	private int hunger;
 	private float pastTime = 0;
-	public int timeToHeal = 5; //in seconds
+	public int timeToHeal = 10; //in seconds
 	private static int normalHealing = 1;
 	private static int betterHealing = 2;
+	public int timeToDropHungerOneValue = 10; //in seconds
+	private float pastHungerTime = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -20,20 +22,44 @@ public class Attributes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		pastTime += Time.deltaTime;
+		pastHungerTime += Time.deltaTime;
+
 		if (pastTime > timeToHeal) {//Heal from time to time
-			int Healnumber = normalHealing;
-			if( hunger == maxHunger){
-				Healnumber = betterHealing;
-			}
-			ChangeLife(Healnumber);
-			pastTime -= timeToHeal;
+			AutomaticalLifeHeal();
 		}
 		if (health <= 0) {//If the player dies
-			health =  maxHealth;
-			hunger = maxHunger;
-			Vector3 newPos = new Vector3(0, 0, 0);
-			this.transform.position = newPos;
+			Die();
+
 		}
+		if (pastHungerTime > timeToDropHungerOneValue) {//Drop Hunger
+			AutomaticalHungerDrop();
+		}
+	}
+
+	private void AutomaticalHungerDrop(){
+		if(hunger > 0){
+			hunger--;
+		}
+		pastHungerTime -= timeToDropHungerOneValue;
+		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
+	}
+
+	private void AutomaticalLifeHeal(){
+		int Healnumber = normalHealing;
+		if( hunger == maxHunger){
+			Healnumber = betterHealing;
+		}
+		ChangeLife(Healnumber);
+		pastTime -= timeToHeal;
+	}
+
+	public void Die(){
+		health =  maxHealth;
+		hunger = maxHunger;
+		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
+		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();
+		Vector3 newPos = new Vector3(0, 0, 0);
+		this.transform.position = newPos;
 	}
 
 	public void ChangeHunger (int value){
@@ -46,7 +72,7 @@ public class Attributes : MonoBehaviour {
 		health += value;
 		if (health > maxHealth)
 			health = maxHealth;
-		GameObject.FindGameObjectWithTag ("Lifetext").GetComponent<LebenText>().setNewText(health);
+		GameObject.FindGameObjectWithTag ("Lifetext").GetComponent<LebenText>().setNewText();
 	}
 
 	public int GetCurrentHunger(){
@@ -55,6 +81,14 @@ public class Attributes : MonoBehaviour {
 
 	public int GetCurrentLife(){
 		return health;
+	}
+
+	public void gotCheese(){
+		if (hunger > maxHunger){
+			hunger++;
+		}
+		ChangeHunger(1);
+		GameObject.FindGameObjectWithTag ("Hungertext").GetComponent<HungerText>().setNewText();
 	}
 
 }
