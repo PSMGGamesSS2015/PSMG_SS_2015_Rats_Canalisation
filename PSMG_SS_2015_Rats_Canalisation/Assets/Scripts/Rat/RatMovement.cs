@@ -9,9 +9,12 @@ public class RatMovement : MonoBehaviour
     public float runSpeed = 5f;
     public float slowSpeed = 1f;
     public float movementSpeed = generalMovementSpeed;
-    public float jumpSpeed = 20f;
+	public static float generalJumpSpeed = 20f;
+	public float jumpSpeed = generalJumpSpeed;
     public bool isGrounded = false;
     public bool isAtWall = false;
+	public float godModeSpeed = 10f;
+	public bool godModeActive = false;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
 
@@ -27,6 +30,7 @@ public class RatMovement : MonoBehaviour
         Run();
         Sneak();
         NormalizeSpeed();
+		GodMode ();
 
 
     }
@@ -116,7 +120,7 @@ public class RatMovement : MonoBehaviour
 
     public void OnCollisionExit(Collision collisionInfo)
     {
-        print("No longer in contact with " + collisionInfo.transform.name);
+       // print("No longer in contact with " + collisionInfo.transform.name);
         isGrounded = false;
     }
 
@@ -127,6 +131,12 @@ public class RatMovement : MonoBehaviour
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
         }
+		if (Input.GetKeyDown(KeyCode.Space) && godModeActive)
+		{
+			isGrounded = false;
+			GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+			
+		}
     }
 
     private void Move(float horizontal, float vertical)
@@ -151,6 +161,20 @@ public class RatMovement : MonoBehaviour
         float angle = inputSignal * rotationSpeed;
         transform.Rotate(transform.up * angle);
     }
+
+	private void GodMode(){
+		if (Input.GetKeyDown (KeyCode.F11))  {
+			if (godModeActive){
+				godModeActive = false;
+				movementSpeed = generalMovementSpeed;
+			}
+			else{
+				godModeActive = true;
+				movementSpeed = godModeSpeed;
+			}
+		}
+
+	}
 
 
 
