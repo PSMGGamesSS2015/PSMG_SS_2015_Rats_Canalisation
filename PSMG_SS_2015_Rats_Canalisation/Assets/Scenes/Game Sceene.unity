@@ -682,6 +682,8 @@ GameObject:
   - 4: {fileID: 31363481}
   - 33: {fileID: 31363480}
   - 23: {fileID: 31363478}
+  - 64: {fileID: 31363482}
+  - 114: {fileID: 31363479}
   m_Layer: 0
   m_Name: "S\xE4ure"
   m_TagString: "S\xE4ure"
@@ -713,6 +715,17 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &31363479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31363477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ef75b00f77ab04489bce07c2af2dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &31363480
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -732,6 +745,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!64 &31363482
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31363477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &31713796
 Prefab:
   m_ObjectHideFlags: 0
