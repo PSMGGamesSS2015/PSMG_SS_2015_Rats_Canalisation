@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour
     // Default Value for is first person view active
     public bool firstPerson = false;
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         // Early out if we don't have a target
         if (!target)
