@@ -47,20 +47,22 @@ public class CameraMovement : MonoBehaviour
                     CameraFinalPosition += -DirPlayerToCamera * (distance - HitInfo.distance);
                 }
             }
+			transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
+			transform.LookAt(target);
         }
         else
         {
-            CameraFinalPosition = target.position;
+			CameraFinalPosition = target.position + target.forward/10 + target.up/10;
+			transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
         }
 
-        transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
-        transform.LookAt(target);
+       
                
     }
 
     void Update()
     {
-        lookUpDown();
+		if(firstPerson)lookUpDown();
         selectCameraPosition();
     }
 
