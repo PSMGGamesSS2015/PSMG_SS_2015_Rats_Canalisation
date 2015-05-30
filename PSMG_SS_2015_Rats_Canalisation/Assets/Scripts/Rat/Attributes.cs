@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Attributes : MonoBehaviour {
-	public int maxHealth = 7;
+	public int maxHealth = 10;
 	public int maxHunger = 7;
 	private int health;
 	private int hunger;
