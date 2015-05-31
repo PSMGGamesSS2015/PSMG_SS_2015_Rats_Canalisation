@@ -28838,8 +28838,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6b1ccaea8743a48b4bb453bdc3ba3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallDamping: .5
   target: {fileID: 895093205}
-  distance: 2
+  distance: 2.5
   height: .5
   Damping: 10
   rotationSpeed: 2

@@ -4,6 +4,8 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour
 {
 
+    //additianal distance to walls
+    public float WallDamping = 0.4f;
     // The target we are following
     public Transform target;
     // The distance in the x-z plane to the target
@@ -31,7 +33,7 @@ public class CameraMovement : MonoBehaviour
 
         if (!firstPerson)
         {
-            CameraFinalPosition = target.position - (target.forward * distance);
+            CameraFinalPosition = target.position - (target.forward * (distance-WallDamping));
             CameraFinalPosition += Vector3.up * height;
 
             DirPlayerToCamera = CameraFinalPosition - target.position;
@@ -44,7 +46,9 @@ public class CameraMovement : MonoBehaviour
             {
                 if (HitInfo.distance < distance)
                 {
-                    CameraFinalPosition += -DirPlayerToCamera * (distance - HitInfo.distance);
+                    CameraFinalPosition.x += -DirPlayerToCamera.x * (distance - HitInfo.distance);
+                    CameraFinalPosition.y += DirPlayerToCamera.y * (distance - HitInfo.distance);
+                    CameraFinalPosition.z += -DirPlayerToCamera.z * (distance - HitInfo.distance);
                 }
             }
 			transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
