@@ -22,18 +22,17 @@ public class HeartAnim : MonoBehaviour
 
     void OnEnable()
     {
-        HealthUIController.OnHealthChanged += Animate;
+        HealthHungerUIController.OnHealthChanged += Animate;
     }
 
     void OnDisable()
     {
-        HealthUIController.OnHealthChanged -= Animate;
+        HealthHungerUIController.OnHealthChanged -= Animate;
     }
 
     void Animate(bool[] heartBoolArray)
     {
         isFull = heartBoolArray[heartID - 1];
-        Debug.Log("isFull: "+isFull);
         anim.SetBool("isFull", isFull);
     }
 }
