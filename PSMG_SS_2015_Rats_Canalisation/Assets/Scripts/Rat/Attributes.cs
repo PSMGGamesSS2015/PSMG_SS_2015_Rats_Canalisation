@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Attributes : MonoBehaviour {
 	public int maxHealth = 10;
-	public int maxHunger = 7;
+	public int maxHunger = 5;
 	private int health;
 	private int hunger;
 	private float pastTime = 0;
