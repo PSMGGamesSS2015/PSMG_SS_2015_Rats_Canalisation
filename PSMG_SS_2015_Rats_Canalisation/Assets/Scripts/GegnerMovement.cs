@@ -14,19 +14,15 @@ public class GegnerMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		float dist = Vector3.Distance(player.transform.position, transform.position);
-		if (dist < reactionDistance) {
-			Vector3 newPos = transform.forward.normalized * movementSpeed * Time.deltaTime;
-			transform.position = (transform.position + newPos);
-		}
+		transform.LookAt(player.transform);
+		if(Vector3.Distance(transform.position,player.transform.position) <= reactionDistance){	
+			transform.position += transform.forward*movementSpeed*Time.deltaTime;	
+		}	
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "Player") {
-			other.transform.position = new Vector3(0, 0, 0);
-		}
-		
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();		
 	}
 }

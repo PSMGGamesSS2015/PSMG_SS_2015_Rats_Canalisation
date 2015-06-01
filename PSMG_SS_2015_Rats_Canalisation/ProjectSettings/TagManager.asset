@@ -11,6 +11,8 @@ TagManager:
   - "K\xE4se"
   - Gegner1
   - "S\xE4ure"
+  - Checkpoint
+  - Lost
   layers:
   - Default
   - TransparentFX
