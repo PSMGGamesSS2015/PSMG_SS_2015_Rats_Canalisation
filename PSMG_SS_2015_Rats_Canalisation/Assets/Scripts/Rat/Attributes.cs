@@ -12,6 +12,7 @@ public class Attributes : MonoBehaviour {
 	private static int betterHealing = 2;
 	public int timeToDropHungerOneValue = 10; //in seconds
 	private float pastHungerTime = 0;
+	public int looseLifeWhileHungry = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +32,14 @@ public class Attributes : MonoBehaviour {
 			Die();
 
 		}
-		if (pastHungerTime > timeToDropHungerOneValue) {//Drop Hunger
+		if (pastHungerTime > timeToDropHungerOneValue ) {//Drop Hunger
+			if(hunger > 0){
 			AutomaticalHungerDrop();
+			}
+			else {
+				ChangeLife (-looseLifeWhileHungry);
+				pastHungerTime -= timeToDropHungerOneValue;
+			}
 		}
 	}
 
