@@ -46,7 +46,8 @@ public class RatMovement : MonoBehaviour
 
     private void Run()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+		int currentHunger = transform.GetComponent<Attributes>().GetCurrentHunger();
+        if (Input.GetKeyDown(KeyCode.LeftControl) && currentHunger>0)
         {
             movementSpeed = runSpeed;
         }
