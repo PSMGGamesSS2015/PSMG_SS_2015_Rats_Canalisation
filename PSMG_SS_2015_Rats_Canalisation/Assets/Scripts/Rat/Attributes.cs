@@ -66,7 +66,9 @@ public class Attributes : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
 		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();
 		Vector3 newPos = new Vector3(0, 0, 0);
-		this.transform.position = newPos;
+		//this.transform.position = newPos;
+        this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
+        this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 	}
 
 	public void ChangeHunger (int value){
