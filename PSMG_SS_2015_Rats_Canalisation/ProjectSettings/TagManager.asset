@@ -13,6 +13,7 @@ TagManager:
   - "S\xE4ure"
   - Checkpoint
   - Lost
+  - Damage
   layers:
   - Default
   - TransparentFX

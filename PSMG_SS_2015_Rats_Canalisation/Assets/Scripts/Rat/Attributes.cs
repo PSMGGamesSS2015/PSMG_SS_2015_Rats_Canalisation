@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Attributes : MonoBehaviour {
 	public int maxHealth = 10;
@@ -13,11 +14,18 @@ public class Attributes : MonoBehaviour {
 	public int timeToDropHungerOneValue = 10; //in seconds
 	private float pastHungerTime = 0;
 	public int looseLifeWhileHungry = 2;
+	public float waitingInfoText = 1f;
+	public float waitingDamage = 0.25f;
+	private bool justDied = false;
 
 	// Use this for initialization
 	void Start () {
+		Cursor.visible = false; 
+		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
+		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
 		health = maxHealth;
 		hunger = maxHunger;
+
 	}
 	
 	// Update is called once per frame
@@ -63,12 +71,20 @@ public class Attributes : MonoBehaviour {
 	public void Die(){
 		health =  maxHealth;
 		hunger = maxHunger;
+		StartCoroutine (text ());
 		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
 		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();
-		Vector3 newPos = new Vector3(0, 0, 0);
-		//this.transform.position = newPos;
         this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
         this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
+	}
+
+	IEnumerator text()
+	{
+		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 1f;
+		justDied = true;
+		yield return new WaitForSeconds(waitingInfoText);
+		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
+		justDied = false;
 	}
 
 	public void ChangeHunger (int value){
@@ -78,11 +94,26 @@ public class Attributes : MonoBehaviour {
 	}
 
 	public void ChangeLife (int value){
+		if (value < 0 && !justDied)
+			StartCoroutine (damageScreen ());
 		health += value;
 		if (health > maxHealth)
 			health = maxHealth;
 		GameObject.FindGameObjectWithTag ("Lifetext").GetComponent<LebenText>().setNewText();
 	}
+
+	IEnumerator damageScreen()
+	{
+		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0.5f;
+		yield return new WaitForSeconds(waitingDamage);
+		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
+
+	}
+
+	public bool diedcheck(){
+		return justDied;
+	}
+
 
 	public int GetCurrentHunger(){
 		return hunger;

@@ -164,7 +164,7 @@ public class RatMovement : MonoBehaviour
     }
 
 	private void GodMode(){
-		if (Input.GetKeyDown (KeyCode.F11))  {
+		if (Input.GetKeyDown (KeyCode.L))  {
 			if (godModeActive){
 				godModeActive = false;
 				movementSpeed = generalMovementSpeed;
