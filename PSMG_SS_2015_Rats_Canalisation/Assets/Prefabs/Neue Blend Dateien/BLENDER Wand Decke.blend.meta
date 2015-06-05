@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 997e40064c21d5c41aaa2f5b3d5a3fa7
-timeCreated: 1433530983
+guid: 48f6f83019d2a854d90cab582c3d0c52
+timeCreated: 1433531429
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Weltabschnitt_2_Waende
+    4300000: Weltabschnitt_1_Wand
     7400000: Default Take
     9500000: //RootNode
   materials:
