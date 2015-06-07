@@ -21,8 +21,7 @@ public class GegnerMovement : MonoBehaviour {
 			transform.position += transform.forward*movementSpeed*Time.deltaTime;	
 		}	
 	}
-
-	void OnTriggerEnter(Collider other){
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();		
+	void OnCollision (Collider other) {
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();	
 	}
 }
