@@ -69,13 +69,13 @@ public class Attributes : MonoBehaviour {
 	}
 
 	public void Die(){
+		this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
+		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 		health =  maxHealth;
 		hunger = maxHunger;
 		StartCoroutine (text ());
 		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
-		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();
-        this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
-        this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
+		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();    
 	}
 
 	IEnumerator text()

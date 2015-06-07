@@ -2626,6 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   reactionDistance: 10
+  damage: 5
 --- !u!54 &108297534
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29709,6 +29710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   reactionDistance: 10
+  damage: 5
 --- !u!54 &1273431743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47762,6 +47764,80 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 430182, guid: f441ada760e4c9f4283975982be91503, type: 2}
   m_PrefabInternal: {fileID: 885724234}
+--- !u!1 &2127217907 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 121540, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
+  m_PrefabInternal: {fileID: 953303595}
+--- !u!82 &2127217915
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2127217907}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24346082, guid: 00c290e003cbd18449975ec7c81c9ffc,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9d7711bbf4856c24b8ffe47f5bf9f891, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &2128447904 stripped
 Transform:
   m_PrefabParentObject: {fileID: 492044, guid: 6f8ba9889779dad4f9d14227ccc18bdd, type: 2}
