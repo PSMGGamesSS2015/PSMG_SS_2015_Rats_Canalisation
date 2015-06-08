@@ -56,7 +56,6 @@ public class Attributes : MonoBehaviour {
 			hunger--;
 		}
 		pastHungerTime -= timeToDropHungerOneValue;
-		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
 	}
 
 	private void AutomaticalLifeHeal(){
@@ -69,13 +68,11 @@ public class Attributes : MonoBehaviour {
 	}
 
 	public void Die(){
-		this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
-		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 		health =  maxHealth;
 		hunger = maxHunger;
-		StartCoroutine (text ());
-		GameObject.FindGameObjectWithTag("Hungertext").GetComponent<HungerText>().setNewText ();
-		GameObject.FindGameObjectWithTag("Lifetext").GetComponent<LebenText>().setNewText();    
+		StartCoroutine (text ());   
+		this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
+		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 	}
 
 	IEnumerator text()
@@ -99,11 +96,11 @@ public class Attributes : MonoBehaviour {
 		health += value;
 		if (health > maxHealth)
 			health = maxHealth;
-		GameObject.FindGameObjectWithTag ("Lifetext").GetComponent<LebenText>().setNewText();
 	}
 
 	IEnumerator damageScreen()
 	{
+		GameObject.FindGameObjectWithTag ("damagesound").GetComponent<AudioSource>().Play();
 		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0.5f;
 		yield return new WaitForSeconds(waitingDamage);
 		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
@@ -128,7 +125,6 @@ public class Attributes : MonoBehaviour {
 			hunger++;
 		}
 		ChangeHunger(1);
-		GameObject.FindGameObjectWithTag ("Hungertext").GetComponent<HungerText>().setNewText();
 	}
 
 }
