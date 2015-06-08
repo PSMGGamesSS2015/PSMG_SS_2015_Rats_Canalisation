@@ -121,6 +121,7 @@ public class Attributes : MonoBehaviour {
 	}
 
 	public void gotCheese(){
+		GameObject.FindGameObjectWithTag ("cheesesound").GetComponent<AudioSource>().Play();
 		if (hunger > maxHunger){
 			hunger++;
 		}

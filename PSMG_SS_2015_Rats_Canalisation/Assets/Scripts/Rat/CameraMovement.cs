@@ -64,6 +64,12 @@ public class CameraMovement : MonoBehaviour
                
     }
 
+	void Start(){
+		Cursor.visible = false; 
+		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
+		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
+	}
+
     void Update()
     {
 		if(firstPerson)lookUpDown();

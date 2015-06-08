@@ -27,12 +27,15 @@ public class RatMovement : MonoBehaviour
     void Update()
     {
         Jump();
-        Run();
-        Sneak();
-        NormalizeSpeed();
+		checkZeroPoint ();
 		GodMode ();
-
-
+		if (!godModeActive) {
+			Run ();
+			Sneak ();
+			NormalizeSpeed ();
+		} else {
+			extremeHeal();
+		}
     }
 
     void FixedUpdate()
@@ -157,6 +160,11 @@ public class RatMovement : MonoBehaviour
 
     }
 
+	private void checkZeroPoint(){
+		if (transform.position.y <= -50)
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();
+	}
+
     private void Turn(float inputSignal)
     {
         float angle = inputSignal * rotationSpeed;
@@ -177,6 +185,8 @@ public class RatMovement : MonoBehaviour
 
 	}
 
-
-
+	private void extremeHeal(){
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(5);
+	}
+	
 }
