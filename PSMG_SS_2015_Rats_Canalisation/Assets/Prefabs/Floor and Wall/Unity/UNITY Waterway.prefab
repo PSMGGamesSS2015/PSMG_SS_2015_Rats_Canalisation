@@ -13,7 +13,7 @@ GameObject:
   - 95: {fileID: 9539444}
   - 64: {fileID: 6478744}
   m_Layer: 0
-  m_Name: UNITY Canalisation
+  m_Name: UNITY Waterway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
