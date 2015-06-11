@@ -75,6 +75,12 @@ public class Attributes : MonoBehaviour {
 		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 	}
 
+    public void goToLastCheckpoint()
+    {
+        this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
+        this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
+    }
+
 	IEnumerator text()
 	{
 		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 1f;

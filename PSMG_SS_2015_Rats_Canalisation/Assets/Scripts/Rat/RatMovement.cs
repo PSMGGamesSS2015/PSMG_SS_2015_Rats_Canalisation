@@ -172,7 +172,7 @@ public class RatMovement : MonoBehaviour
     }
 
 	private void GodMode(){
-		if (Input.GetKeyDown (KeyCode.L))  {
+		if (Input.GetKeyDown (KeyCode.L) && !PauseController.isPaused)  {
 			if (godModeActive){
 				godModeActive = false;
 				movementSpeed = generalMovementSpeed;
