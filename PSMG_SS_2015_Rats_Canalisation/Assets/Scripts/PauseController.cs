@@ -26,9 +26,9 @@ public class PauseController : MonoBehaviour {
         if (isPaused)
         {
             isPaused = false;
-            Cursor.visible = false;
-            Time.timeScale = 1;
+            Cursor.visible = false;         
             OnPauseChanged();
+            StartCoroutine(UnPauseWithDelay()); 
         }
         else
         {
@@ -38,5 +38,11 @@ public class PauseController : MonoBehaviour {
             Time.timeScale = 0;
             
         }
+    }
+
+    IEnumerator UnPauseWithDelay()
+    {
+        yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(1.5f));
+        Time.timeScale = 1;
     }
 }

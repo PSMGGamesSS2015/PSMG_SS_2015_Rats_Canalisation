@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     private Animator anim;
+    public float RohrID;
 
     // Use this for initialization
     void Start()
@@ -20,16 +21,22 @@ public class PauseMenu : MonoBehaviour
 
     void OnEnable()
     {
-        PauseController.OnPauseChanged += Animate;
+        PauseController.OnPauseChanged += StartCoroutineForAnimation;
     }
 
     void OnDisable()
     {
-        PauseController.OnPauseChanged -= Animate;
+        PauseController.OnPauseChanged -= StartCoroutineForAnimation;
     }
 
-    void Animate()
+    void StartCoroutineForAnimation()
     {
+        StartCoroutine(Animation());
+    }
+
+    IEnumerator Animation()
+    {
+        yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(RohrID*0.2f));
         anim.SetBool("isPaused", PauseController.isPaused);
     }
 

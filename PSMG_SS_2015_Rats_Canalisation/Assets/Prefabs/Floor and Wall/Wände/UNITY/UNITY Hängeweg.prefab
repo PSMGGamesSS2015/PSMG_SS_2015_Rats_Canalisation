@@ -13,7 +13,7 @@ GameObject:
   - 95: {fileID: 9526496}
   - 64: {fileID: 6414156}
   m_Layer: 0
-  m_Name: "UNITY Ha\u0308ngeweg"
+  m_Name: "UNITY H\xE4ngeweg"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
