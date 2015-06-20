@@ -44,7 +44,9 @@ public class RatMovement : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
         Turn(horizontalMouseInput);
-        Move(moveHorizontal, moveVertical);
+		if (!GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraMovement> ().firstPersonActive ()) {
+			Move (moveHorizontal, moveVertical);
+		}
     }
 
     private void Run()
@@ -183,6 +185,10 @@ public class RatMovement : MonoBehaviour
 			}
 		}
 
+	}
+
+	public bool checkGodMode(){
+		return godModeActive;
 	}
 
 	private void extremeHeal(){

@@ -17,32 +17,31 @@ public class Attributes : MonoBehaviour {
 	public float waitingInfoText = 1f;
 	public float waitingDamage = 0.25f;
 	private bool justDied = false;
-
+	
 	// Use this for initialization
 	void Start () {
-		Cursor.visible = false; 
 		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
 		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
 		health = maxHealth;
 		hunger = maxHunger;
-
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		pastTime += Time.deltaTime;
 		pastHungerTime += Time.deltaTime;
-
+		
 		if (pastTime > timeToHeal) {//Heal from time to time
 			AutomaticalLifeHeal();
 		}
 		if (health <= 0) {//If the player dies
 			Die();
-
+			
 		}
 		if (pastHungerTime > timeToDropHungerOneValue ) {//Drop Hunger
 			if(hunger > 0){
-			AutomaticalHungerDrop();
+				AutomaticalHungerDrop();
 			}
 			else {
 				ChangeLife (-looseLifeWhileHungry);
@@ -50,14 +49,14 @@ public class Attributes : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	private void AutomaticalHungerDrop(){
 		if(hunger > 0){
 			hunger--;
 		}
 		pastHungerTime -= timeToDropHungerOneValue;
 	}
-
+	
 	private void AutomaticalLifeHeal(){
 		int Healnumber = normalHealing;
 		if( hunger == maxHunger){
@@ -66,21 +65,23 @@ public class Attributes : MonoBehaviour {
 		ChangeLife(Healnumber);
 		pastTime -= timeToHeal;
 	}
-
+	
 	public void Die(){
-		health =  maxHealth;
-		hunger = maxHunger;
-		StartCoroutine (text ());   
+		if (!GameObject.FindGameObjectWithTag ("Player").GetComponent<RatMovement> ().checkGodMode()) {
+			health = maxHealth;
+			hunger = maxHunger;
+			StartCoroutine (text ());   
+			this.transform.position = GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getSpawnpointPosition ();
+			this.transform.LookAt (GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getDirection ());
+		}
+	}
+	
+	public void goToLastCheckpoint()
+	{
 		this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
 		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
 	}
-
-    public void goToLastCheckpoint()
-    {
-        this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
-        this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
-    }
-
+	
 	IEnumerator text()
 	{
 		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 1f;
@@ -89,13 +90,13 @@ public class Attributes : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
 		justDied = false;
 	}
-
+	
 	public void ChangeHunger (int value){
 		hunger += value;
 		if (hunger > maxHunger)
 			hunger = maxHunger;
 	}
-
+	
 	public void ChangeLife (int value){
 		if (value < 0 && !justDied)
 			StartCoroutine (damageScreen ());
@@ -103,29 +104,29 @@ public class Attributes : MonoBehaviour {
 		if (health > maxHealth)
 			health = maxHealth;
 	}
-
+	
 	IEnumerator damageScreen()
 	{
 		GameObject.FindGameObjectWithTag ("damagesound").GetComponent<AudioSource>().Play();
 		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0.5f;
 		yield return new WaitForSeconds(waitingDamage);
 		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
-
+		
 	}
-
+	
 	public bool diedcheck(){
 		return justDied;
 	}
-
-
+	
+	
 	public int GetCurrentHunger(){
 		return hunger;
 	}
-
+	
 	public int GetCurrentLife(){
 		return health;
 	}
-
+	
 	public void gotCheese(){
 		GameObject.FindGameObjectWithTag ("cheesesound").GetComponent<AudioSource>().Play();
 		if (hunger > maxHunger){
@@ -133,5 +134,5 @@ public class Attributes : MonoBehaviour {
 		}
 		ChangeHunger(1);
 	}
-
+	
 }

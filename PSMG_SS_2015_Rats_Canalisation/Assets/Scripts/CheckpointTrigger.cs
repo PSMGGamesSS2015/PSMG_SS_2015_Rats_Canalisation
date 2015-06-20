@@ -41,7 +41,6 @@ public class CheckpointTrigger : MonoBehaviour {
 		Vector3 onScreen = new Vector3 (Screen.width/8, 250, 0);
 		Vector3 offScreen = new Vector3 (Screen.width/8, 1000, 0);
 		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<RectTransform>().localPosition = onScreen;
-		wait ();
 		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<RectTransform>().localPosition = offScreen;
 	}
 
@@ -52,9 +51,6 @@ public class CheckpointTrigger : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<CanvasGroup>().alpha = 0f;
 	}
 
-	private void wait(){
-
-	}
 
     public Vector3 getSpawnpointPosition()
     {
