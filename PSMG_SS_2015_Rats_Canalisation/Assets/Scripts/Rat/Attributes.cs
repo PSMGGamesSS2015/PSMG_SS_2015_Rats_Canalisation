@@ -48,6 +48,12 @@ public class Attributes : MonoBehaviour {
 				pastHungerTime -= timeToDropHungerOneValue;
 			}
 		}
+		checkHeight ();
+	}
+
+	private void checkHeight(){
+		if (transform.position.y < -10)
+			Die ();
 	}
 	
 	private void AutomaticalHungerDrop(){

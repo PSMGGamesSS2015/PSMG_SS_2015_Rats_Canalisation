@@ -1093,7 +1093,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778944145}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -4, y: 193}
@@ -6527,7 +6527,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330104119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.0280000009, z: .0610000007}
+  m_LocalPosition: {x: 0, y: -.0279999077, z: .0610000975}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 1743830459}
@@ -9624,7 +9624,7 @@ RectTransform:
   - {fileID: 259652000}
   - {fileID: 1394326301}
   m_Father: {fileID: 778944145}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 6.10351562e-05, y: 0}
@@ -10344,7 +10344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .47299999
+      value: .450300008
       objectReference: {fileID: 0}
     - target: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: m_LocalPosition.y
@@ -10362,7 +10362,29 @@ Prefab:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11491332, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: reactionDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 139798, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: UNITY fan rotor 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 138700, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: BLENDER fuse box 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 197810, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: Particle System 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.120099999
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11464280, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+    - {fileID: 11467534, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &500778051 stripped
@@ -15282,11 +15304,11 @@ RectTransform:
   m_Children:
   - {fileID: 46141450}
   - {fileID: 1006176423}
+  - {fileID: 1035459108}
   - {fileID: 1772585637}
   - {fileID: 50231300}
   - {fileID: 1530856265}
   - {fileID: 435928290}
-  - {fileID: 1035459108}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
@@ -17336,7 +17358,21 @@ Prefab:
       propertyPath: m_Name
       value: Rotor1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11491332, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: reactionDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 139798, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: UNITY fan rotor 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138700, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: BLENDER fuse box 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11467534, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+    - {fileID: 11433634, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &885499070 stripped
@@ -18371,6 +18407,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &946384044 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 139798, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+  m_PrefabInternal: {fileID: 2021526292}
 --- !u!4 &950078120 stripped
 Transform:
   m_PrefabParentObject: {fileID: 480962, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
@@ -19920,7 +19960,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778944145}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: -4, y: -468}
@@ -22059,10 +22099,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1137218256 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 139798, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
-  m_PrefabInternal: {fileID: 492244289}
 --- !u!1 &1139032094
 GameObject:
   m_ObjectHideFlags: 0
@@ -29661,7 +29697,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778944145}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -34131,7 +34167,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778944145}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: -4, y: -105}
@@ -38809,14 +38845,14 @@ Prefab:
     - target: {fileID: 11491332, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1137218256}
+      objectReference: {fileID: 946384044}
     - target: {fileID: 195816, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: m_Name
       value: Rotor3
       objectReference: {fileID: 0}
     - target: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .467999995
+      value: .453299999
       objectReference: {fileID: 0}
     - target: {fileID: 416624, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
       propertyPath: m_RootOrder
@@ -38826,7 +38862,41 @@ Prefab:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11491332, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: reactionDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 139798, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: UNITY fan rotor 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 138700, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: BLENDER fuse box 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 197810, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_Name
+      value: Particle System 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 416624, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416624, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.00499999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 416624, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.101000004
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11467534, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
+    - {fileID: 11464280, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2023074780
