@@ -17,9 +17,6 @@ TagManager:
   - cheesesound
   - damagesound
   - fan
-  - PressButton
-  - Enemy
-  - watchPoint
   layers:
   - Default
   - TransparentFX
