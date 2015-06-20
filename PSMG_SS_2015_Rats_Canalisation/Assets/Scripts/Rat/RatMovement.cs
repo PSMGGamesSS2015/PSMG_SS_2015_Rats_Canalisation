@@ -185,6 +185,10 @@ public class RatMovement : MonoBehaviour
 
 	}
 
+	public bool checkGodMode(){
+		return godModeActive;
+	}
+
 	private void extremeHeal(){
 		GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(5);
 	}
