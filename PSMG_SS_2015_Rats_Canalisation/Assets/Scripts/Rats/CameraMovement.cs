@@ -30,33 +30,34 @@ public class CameraMovement : MonoBehaviour
 		
 		Vector3 CameraFinalPosition = new Vector3();
 		Vector3 DirPlayerToCamera = new Vector3();
+
+		CameraFinalPosition = target.position - (target.forward * (distance-WallDamping));
+		CameraFinalPosition += Vector3.up * height;
+		
+		DirPlayerToCamera = CameraFinalPosition - target.position;
+		DirPlayerToCamera.Normalize();
+		
+		Ray MyRay = new Ray(target.position, DirPlayerToCamera);
+		RaycastHit HitInfo = new RaycastHit();
+		Physics.Raycast(MyRay, out HitInfo, distance);
+		if (HitInfo.collider != null)
+		{
+			if (HitInfo.distance < distance)
+			{
+				CameraFinalPosition.x += -DirPlayerToCamera.x * (distance - HitInfo.distance);
+				CameraFinalPosition.y += DirPlayerToCamera.y * (distance - HitInfo.distance);
+				CameraFinalPosition.z += -DirPlayerToCamera.z * (distance - HitInfo.distance);
+			}
+		}
 		
 		if (!firstPerson)
 		{
-			CameraFinalPosition = target.position - (target.forward * (distance-WallDamping));
-			CameraFinalPosition += Vector3.up * height;
-			
-			DirPlayerToCamera = CameraFinalPosition - target.position;
-			DirPlayerToCamera.Normalize();
-			
-			Ray MyRay = new Ray(target.position, DirPlayerToCamera);
-			RaycastHit HitInfo = new RaycastHit();
-			Physics.Raycast(MyRay, out HitInfo, distance);
-			if (HitInfo.collider != null)
-			{
-				if (HitInfo.distance < distance)
-				{
-					CameraFinalPosition.x += -DirPlayerToCamera.x * (distance - HitInfo.distance);
-					CameraFinalPosition.y += DirPlayerToCamera.y * (distance - HitInfo.distance);
-					CameraFinalPosition.z += -DirPlayerToCamera.z * (distance - HitInfo.distance);
-				}
-			}
 			transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
 			transform.LookAt(target);
 		}
 		else
 		{
-			CameraFinalPosition = target.position + target.forward/10 + target.up/10;
+			CameraFinalPosition = target.position + target.up/2;
 			transform.position = Vector3.Lerp(transform.position, CameraFinalPosition, Time.deltaTime * Damping);
 		}
 		
@@ -80,7 +81,8 @@ public class CameraMovement : MonoBehaviour
 	{
 		//Move Camera up and down 
 		float angle = Input.GetAxis("Mouse Y") * rotationSpeed;
-		transform.Rotate(-angle, 0, 0);
+		float angle2 = Input.GetAxis("Mouse X") * rotationSpeed;
+		transform.Rotate(-angle, angle2, 0);
 	}
 	
 	public void selectCameraPosition()

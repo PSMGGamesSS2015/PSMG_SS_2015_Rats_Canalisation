@@ -32,6 +32,7 @@ public class RatMovement : MonoBehaviour
         Jump();
 		checkZeroPoint ();
 		GodMode ();
+		Attack ();
 		if (!godModeActive && !rageModeActive) {
 			Run ();
 			Sneak ();
@@ -164,6 +165,20 @@ public class RatMovement : MonoBehaviour
         }
 
     }
+
+	private void Attack(){
+		if (Input.GetMouseButtonDown(0)) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray, out hit)){
+				if (hit.collider.tag == "Enemy"){
+					hit.collider.enabled = false;
+					Destroy(hit.collider);
+				}
+			}
+
+		}
+	}
 
 	private void checkZeroPoint(){
 		if (transform.position.y <= -50)
