@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GegnerMovement : MonoBehaviour {
 	
-	public float movementSpeed = 3f;
+	public float movementSpeed = 1.5f;
 	public float reactionDistance = 10.0f;
 	public int damage = 5;
 	private Vector3 startPos; 
@@ -26,14 +26,15 @@ public class GegnerMovement : MonoBehaviour {
 	
 	//Do stuff if player is near
 	void playerIsNear (GameObject player){
-		transform.position += transform.forward*movementSpeed*Time.deltaTime;	
+		//transform.position += transform.forward*movementSpeed*Time.deltaTime;
+		transform.position += (player.transform.position - transform.position).normalized * movementSpeed * Time.deltaTime;
 		transform.LookAt(player.transform);
 	}
 	
 	//Do stuff if collision with player
 	void OnCollisionEnter (Collision col) {
 		if(col.gameObject == GameObject.FindGameObjectWithTag("Player"))
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-damage);
 	}
 	
 	void playerDied(){
