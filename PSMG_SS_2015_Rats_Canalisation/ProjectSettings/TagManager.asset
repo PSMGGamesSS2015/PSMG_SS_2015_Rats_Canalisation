@@ -21,6 +21,9 @@ TagManager:
   - Enemy
   - Energy
   - RageRat
+  - FreddyTalk
+  - Talkbox
+  - Talktext
   layers:
   - Default
   - TransparentFX
