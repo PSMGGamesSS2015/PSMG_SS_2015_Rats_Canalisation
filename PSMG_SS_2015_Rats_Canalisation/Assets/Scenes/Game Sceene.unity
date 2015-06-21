@@ -21399,8 +21399,8 @@ Transform:
   m_PrefabParentObject: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782763621}
-  m_LocalRotation: {x: -2.68220901e-07, y: 5.96046448e-08, z: -.707106709, w: .707106829}
-  m_LocalPosition: {x: .450300008, y: -.289999992, z: -.120099999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.99399996, y: -.674000025, z: -.119999997}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 109493698}
@@ -21419,7 +21419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1691144845}
-  reactionDistance: 1.5
+  reactionDistance: 1
   showTime: 1
 --- !u!64 &782763624
 MeshCollider:
@@ -24809,7 +24809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536760ffd5e00b40b90c5d7e7a98555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 10
 --- !u!64 &946384047
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30860,7 +30860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536760ffd5e00b40b90c5d7e7a98555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 10
 --- !u!64 &1177157535
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35351,7 +35351,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396794734}
   m_LocalRotation: {x: -2.68220901e-07, y: 5.96046448e-08, z: -.707106709, w: .707106829}
-  m_LocalPosition: {x: .442000002, y: -.393999994, z: -.149000004}
+  m_LocalPosition: {x: .442000002, y: -1.926, z: -.149000004}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 68735626}
@@ -35370,7 +35370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1177157532}
-  reactionDistance: 1.5
+  reactionDistance: 1
   showTime: 1
 --- !u!64 &1396794737
 MeshCollider:
@@ -42549,7 +42549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536760ffd5e00b40b90c5d7e7a98555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 10
 --- !u!64 &1691144848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47278,8 +47278,8 @@ Transform:
   m_PrefabParentObject: {fileID: 474636, guid: a8405159a8c03044e91b0a115f2fc355, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918982996}
-  m_LocalRotation: {x: -2.68220901e-07, y: 5.96046448e-08, z: -.707106709, w: .707106829}
-  m_LocalPosition: {x: .453299999, y: -.393999994, z: -.101000004}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -1.62920685e-07}
+  m_LocalPosition: {x: .773000002, y: -2.69300008, z: -.101000004}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 1401236222}
@@ -47298,7 +47298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 946384044}
-  reactionDistance: 1.5
+  reactionDistance: 1
   showTime: 1
 --- !u!64 &1918982999
 MeshCollider:
