@@ -20,6 +20,7 @@ TagManager:
   - PressButton
   - Enemy
   - Energy
+  - RageRat
   layers:
   - Default
   - TransparentFX

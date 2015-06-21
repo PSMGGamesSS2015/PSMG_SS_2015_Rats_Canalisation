@@ -15,12 +15,15 @@ public class RatMovement : MonoBehaviour
     public bool isAtWall = false;
 	public float godModeSpeed = 10f;
 	public bool godModeActive = false;
+	public float rageModeSpeed = 5f;
+	public bool rageModeActive = false;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
 
     // Use this for initialization
     void Start()
     {
+		transform.GetComponent<ParticleSystem>().enableEmission = false;
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class RatMovement : MonoBehaviour
         Jump();
 		checkZeroPoint ();
 		GodMode ();
-		if (!godModeActive) {
+		if (!godModeActive && !rageModeActive) {
 			Run ();
 			Sneak ();
 			NormalizeSpeed ();
@@ -191,8 +194,25 @@ public class RatMovement : MonoBehaviour
 		return godModeActive;
 	}
 
+	public bool checkRageMode(){
+		return rageModeActive;
+	}
+
 	private void extremeHeal(){
-		GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(5);
+		transform.GetComponent<Attributes>().ChangeLife(5);
+	}
+
+	public void gotPill(){
+		godModeActive = false;
+		rageModeActive = true;
+		transform.GetComponent<ParticleSystem>().enableEmission = true;
+		movementSpeed = rageModeSpeed;
+	}
+
+	public void deactivateRagemode(){
+		rageModeActive = false;
+		movementSpeed = generalMovementSpeed;
+		transform.GetComponent<ParticleSystem>().enableEmission = false;
 	}
 	
 }

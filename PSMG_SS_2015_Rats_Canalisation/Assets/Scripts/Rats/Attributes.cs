@@ -40,7 +40,9 @@ public class Attributes : MonoBehaviour {
 			
 		}
 		if (pastHungerTime > timeToDropHungerOneValue ) {//Drop Hunger
-			if(hunger > 0){
+			bool modeActive = transform.GetComponent<RatMovement> ().checkGodMode() ||
+				transform.GetComponent<RatMovement> ().checkRageMode ();
+			if(hunger > 0 && !modeActive){
 				AutomaticalHungerDrop();
 			}
 			else {
@@ -104,7 +106,9 @@ public class Attributes : MonoBehaviour {
 	}
 	
 	public void ChangeLife (int value){
-		if (value < 0 && !justDied)
+		bool modeActive = transform.GetComponent<RatMovement> ().checkGodMode() ||
+			transform.GetComponent<RatMovement> ().checkRageMode ();
+		if (value < 0 && !justDied && !modeActive)
 			StartCoroutine (damageScreen ());
 		health += value;
 		if (health > maxHealth)
