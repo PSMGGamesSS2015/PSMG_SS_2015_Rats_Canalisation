@@ -6,16 +6,23 @@ using System;
 public class Timer : MonoBehaviour {
 	private float counter = 1f;
 	private float pasttime = 0;
+	public static int defaultTens = 3;
+	public static int defaultSingles = 0;
+	private int tens = defaultTens;
+	private int singles = defaultSingles;
 
 	// Use this for initialization
 	void Start () {
-		transform.GetComponent<CanvasGroup>().alpha = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.FindGameObjectWithTag ("Player").GetComponent<RatMovement>().checkRageMode()) {
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		if (player.GetComponent<RatMovement> ().checkRageMode ()
+			&& !player.GetComponent<Attributes> ().diedcheck ()) {
 			timerProcess ();
+		} else {
+			transform.GetComponent<CanvasGroup>().alpha = 0f;
 		}
 	}
 
@@ -23,10 +30,6 @@ public class Timer : MonoBehaviour {
 		pasttime += Time.deltaTime;
 		transform.GetComponent<CanvasGroup>().alpha = 1f;
 		String mytext = transform.GetComponent<Text> ().text;
-		double dtens = Char.GetNumericValue(mytext[2]);
-		double dsingles = Char.GetNumericValue (mytext [3]);
-		int tens = Convert.ToInt32(dtens);
-		int singles = Convert.ToInt32(dsingles);
 		if (pasttime > counter){
 			pasttime -= counter;
 			if(singles>0){
@@ -37,6 +40,8 @@ public class Timer : MonoBehaviour {
 				singles+=9;
 			}
 			else{
+				tens = defaultTens;
+				singles = defaultSingles;
 				transform.GetComponent<CanvasGroup>().alpha = 0f;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<RatMovement>().deactivateRagemode();
 			}

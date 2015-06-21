@@ -73,16 +73,7 @@ public class Attributes : MonoBehaviour {
 		ChangeLife(Healnumber);
 		pastTime -= timeToHeal;
 	}
-	
-	public void Die(){
-		if (!GameObject.FindGameObjectWithTag ("Player").GetComponent<RatMovement> ().checkGodMode()) {
-			health = maxHealth;
-			hunger = maxHunger;
-			StartCoroutine (text ());   
-			this.transform.position = GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getSpawnpointPosition ();
-			this.transform.LookAt (GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getDirection ());
-		}
-	}
+
 	
 	public void goToLastCheckpoint()
 	{
@@ -143,6 +134,18 @@ public class Attributes : MonoBehaviour {
 			hunger++;
 		}
 		ChangeHunger(1);
+	}
+
+	public void Die(){
+		if (!GameObject.FindGameObjectWithTag ("Player").GetComponent<RatMovement> ().checkGodMode()) {
+			health = maxHealth;
+			hunger = maxHunger;
+			StartCoroutine (text ());   
+			this.transform.position = GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getSpawnpointPosition ();
+			this.transform.LookAt (GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getDirection ());
+			transform.GetComponent<RatMovement>().deactivateRagemode();
+			GameObject.FindGameObjectWithTag("Timer").GetComponent<CanvasGroup>().alpha = 0f;
+		}
 	}
 	
 }
