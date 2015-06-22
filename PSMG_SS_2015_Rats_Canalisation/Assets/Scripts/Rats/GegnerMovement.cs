@@ -26,7 +26,6 @@ public class GegnerMovement : MonoBehaviour {
 	
 	//Do stuff if player is near
 	void playerIsNear (GameObject player){
-		//transform.position += transform.forward*movementSpeed*Time.deltaTime;
 		transform.position += (player.transform.position - transform.position).normalized * movementSpeed * Time.deltaTime;
 		transform.LookAt(player.transform);
 	}
