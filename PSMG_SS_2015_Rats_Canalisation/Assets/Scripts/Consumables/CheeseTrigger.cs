@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CheeseTrigger : MonoBehaviour {
 	private Vector3 startPos; 
+	private int smooth = 20;
+	public int rotationSpeed = 2;
 	
 	// Use this for initialization
 	void Start () {
@@ -15,6 +17,10 @@ public class CheeseTrigger : MonoBehaviour {
 		if (player.GetComponent<Attributes> ().diedcheck ()) {
 			playerDied();
 		}	
+	}
+
+	void FixedUpdate(){
+		transform.Rotate (Vector3.forward * smooth * rotationSpeed * Time.deltaTime);
 	}
 	
 	void OnTriggerEnter(Collider other){

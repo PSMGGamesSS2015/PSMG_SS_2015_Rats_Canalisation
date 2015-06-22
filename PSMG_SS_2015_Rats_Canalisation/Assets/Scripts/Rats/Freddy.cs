@@ -10,6 +10,7 @@ public class Freddy : MonoBehaviour {
 	private GameObject talk;
 	private GameObject talkBox;
 	private GameObject talkText;
+	private int counter = 30;
 
 	// Use this for initialization
 	void Start () {
@@ -30,12 +31,25 @@ public class Freddy : MonoBehaviour {
 
 	}
 
+	private void moveRightLeft(){
+		if (counter > 0) {
+			transform.Rotate (Vector3.up *10 * Time.deltaTime);
+			counter--;
+		} else if (counter > -30) {
+			transform.Rotate (-Vector3.up * 10 * Time.deltaTime);
+			counter--;
+		} else {
+			counter+=60;
+		}
+	}
+
 	private void playerIsNear(){
 		if (Input.GetKeyDown (KeyCode.E)) {
 			keyHasBeenPressed = true;
 			talk.GetComponent<CanvasGroup>().alpha = 0f;
 			StartCoroutine (box ());
 		}
+		moveRightLeft ();
 		if(!isShowing && !keyHasBeenPressed)StartCoroutine (text ());
 	}
 
