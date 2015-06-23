@@ -80,9 +80,9 @@ public class CameraMovement : MonoBehaviour
 	public void lookUpDown()
 	{
 		//Move Camera up and down 
-		float angle = Input.GetAxis("Mouse Y") * rotationSpeed;
-		float angle2 = Input.GetAxis("Mouse X") * rotationSpeed;
-		transform.Rotate(-angle, angle2, 0);
+		float angle2 = Input.GetAxis("Mouse Y") * rotationSpeed;
+		float angle = Input.GetAxis("Mouse X") * rotationSpeed;
+		transform.Rotate(-angle2, angle, 0);
 	}
 	
 	public void selectCameraPosition()
