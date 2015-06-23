@@ -13,7 +13,7 @@ GameObject:
   - 95: {fileID: 9557302}
   - 65: {fileID: 6583076}
   m_Layer: 0
-  m_Name: UNITY Gatter rund
+  m_Name: UNITY Round grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
