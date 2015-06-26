@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Freddy : MonoBehaviour {
 	public float FreddyReaction = 1f;
+	public string FreddysText = "";
 	private bool isShowing = false;
 	private bool keyHasBeenPressed = false;
-	public int showTime = 1;
-	public int boxTime = 3;
+	private int showTime = 1;
+	private int boxTime = 3;
 	private GameObject talk;
 	private GameObject talkBox;
 	private GameObject talkText;
@@ -20,6 +22,8 @@ public class Freddy : MonoBehaviour {
 		talkBox.GetComponent<CanvasGroup>().alpha = 0f;
 		talkText = GameObject.FindGameObjectWithTag("Talktext");
 		talkText.GetComponent<CanvasGroup>().alpha = 0f;
+		Text freddystext = talkText.GetComponent<Text> ();
+		freddystext.text = FreddysText;
 	}
 	
 	// Update is called once per frame

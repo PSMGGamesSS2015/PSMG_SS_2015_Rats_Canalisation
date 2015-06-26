@@ -3,6 +3,7 @@ using System.Collections;
 
 public class OpenButton : MonoBehaviour {
 	public GameObject target;
+	public GameObject target2;
 	public float reactionDistance = 1.5f;
 	private GameObject player;
 	private GameObject button;
@@ -30,7 +31,8 @@ public class OpenButton : MonoBehaviour {
 	private void playerIsNear(){
 		if (Input.GetKeyDown (KeyCode.E)) {
 			DoStuffWithButton();
-			DoStuffWithTarget();
+			DoStuffWithTarget(target);
+			if(target2 != null)DoStuffWithTarget(target2);
 		}
 		if(!isShowing)StartCoroutine (text ());
 	}
@@ -43,12 +45,12 @@ public class OpenButton : MonoBehaviour {
 		transform.GetChild (0).GetComponent<ParticleSystem> ().loop = false;
 	}
 	
-	private void DoStuffWithTarget(){
-		if (target.tag == "fan") {
-			target.GetComponent<Rotor> ().changeRotorActiveState (false);
+	private void DoStuffWithTarget(GameObject t){
+		if (t.tag == "fan") {
+			t.GetComponent<Rotor> ().changeRotorActiveState (false);
 		}
 		else {
-			Destroy (target);
+			t.transform.position = new Vector3(0,-150,0);
 		}
 	}
 
