@@ -1,23 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CheeseTrigger : MonoBehaviour {
 	private Vector3 startPos; 
 	private int smooth = 20;
 	public int rotationSpeed = 2;
-	
-	// Use this for initialization
-	void Start () {
-		startPos = transform.position;
-	}
+
+    [SerializeField]
+    private Button MyButton = null; 
+
+    void Start()
+    {
+        startPos = transform.position;
+
+        MyButton = GameObject.Find("zum letzten Checkpoint").GetComponent<Button>();
+        MyButton.onClick.AddListener(() => {
+            RespawnCheese();
+        });
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		if (player.GetComponent<Attributes> ().diedcheck ()) {
-			playerDied();
-		}	
+
 	}
+
+    void OnEnable(){
+        RatManager.OnDie += RespawnCheese;
+    }
+
+    void DisAble()
+    {
+        RatManager.OnDie -= RespawnCheese;
+    }
 
 	void FixedUpdate(){
 		transform.Rotate (Vector3.forward * smooth * rotationSpeed * Time.deltaTime);
@@ -31,7 +46,7 @@ public class CheeseTrigger : MonoBehaviour {
 		
 	}
 	
-	void playerDied(){
+	public void RespawnCheese(){
 		transform.position = startPos;
 	}
 }

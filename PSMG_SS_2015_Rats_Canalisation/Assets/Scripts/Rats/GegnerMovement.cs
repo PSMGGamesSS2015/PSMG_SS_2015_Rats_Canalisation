@@ -5,7 +5,7 @@ public class GegnerMovement : MonoBehaviour {
 	
 	public float movementSpeed = 1.5f;
 	public float reactionDistance = 10.0f;
-	public int damage = 5;
+	public int damage = 3;
 	private Vector3 startPos; 
 	
 	// Use this for initialization
@@ -19,10 +19,17 @@ public class GegnerMovement : MonoBehaviour {
 		if(Vector3.Distance(transform.position,player.transform.position) <= reactionDistance){	
 			playerIsNear(player);
 		}	
-		if (player.GetComponent<Attributes> ().diedcheck ()) {
-			playerDied();
-		}	
 	}
+
+    void Enable()
+    {
+        RatManager.OnDie += RespawnEnemy;
+    }
+
+    void Disable()
+    {
+        RatManager.OnDie -= RespawnEnemy;
+    }
 	
 	//Do stuff if player is near
 	void playerIsNear (GameObject player){
@@ -35,8 +42,9 @@ public class GegnerMovement : MonoBehaviour {
 		if(col.gameObject == GameObject.FindGameObjectWithTag("Player"))
 			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-damage);
 	}
-	
-	void playerDied(){
+
+    void RespawnEnemy()
+    {
 		transform.position = startPos;
 	}
 }

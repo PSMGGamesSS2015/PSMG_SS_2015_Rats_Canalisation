@@ -12,7 +12,9 @@ public class CheckpointTrigger : MonoBehaviour {
     //Empty Object the Player looks at when respawning
     public Transform Direction;
 
-	public float waitingCheckpointText = 1;
+
+    public delegate void CheckPointReached();
+    public static event CheckPointReached OnCheckPointReached;
  
 
 	// Use this for initialization
@@ -31,26 +33,11 @@ public class CheckpointTrigger : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-			if(! GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().diedcheck())StartCoroutine( text() );
+            OnCheckPointReached();
             SpawnpointPosition = Spawnpoint.position;
             finalDirection = Direction;
         }
     }
-
-	private void showText(){
-		Vector3 onScreen = new Vector3 (Screen.width/8, 250, 0);
-		Vector3 offScreen = new Vector3 (Screen.width/8, 1000, 0);
-		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<RectTransform>().localPosition = onScreen;
-		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<RectTransform>().localPosition = offScreen;
-	}
-
-	IEnumerator text()
-	{
-		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<CanvasGroup>().alpha = 1f;
-		yield return new WaitForSeconds(waitingCheckpointText);
-		GameObject.FindGameObjectWithTag ("Checkpoint").GetComponent<CanvasGroup>().alpha = 0f;
-	}
-
 
     public Vector3 getSpawnpointPosition()
     {

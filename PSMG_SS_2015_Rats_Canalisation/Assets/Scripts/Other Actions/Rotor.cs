@@ -15,7 +15,7 @@ public class Rotor : MonoBehaviour {
 	//Do stuff if collision with player
 	void OnCollisionEnter (Collision col) {
 		if(col.gameObject == GameObject.FindGameObjectWithTag("Player"))
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-(Attributes.health + 1));
 	}
 	
 	void FixedUpdate() {

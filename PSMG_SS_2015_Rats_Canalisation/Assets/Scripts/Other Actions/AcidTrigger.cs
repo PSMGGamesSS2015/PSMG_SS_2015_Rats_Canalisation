@@ -17,7 +17,7 @@ public class AcidTrigger : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().ChangeLife(-(Attributes.health + 1));
         }
     }
 }

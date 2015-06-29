@@ -24,6 +24,7 @@ TagManager:
   - FreddyTalk
   - Talkbox
   - Talktext
+  - Timer
   layers:
   - Default
   - TransparentFX
