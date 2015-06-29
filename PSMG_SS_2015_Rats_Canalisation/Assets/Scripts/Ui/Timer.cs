@@ -11,15 +11,16 @@ public class Timer : MonoBehaviour {
 	private int tens = defaultTens;
 	private int singles = defaultSingles;
 
+    public delegate void DeactivateRageMode();
+    public static event DeactivateRageMode OnDeactivateRageMode;
+
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-		if (player.GetComponent<RatMovement> ().checkRageMode ()
-			&& !player.GetComponent<Attributes> ().diedcheck ()) {
+		if (RatManager.isRageMode) {
 			timerProcess ();
 		} else {
 			transform.GetComponent<CanvasGroup>().alpha = 0f;
@@ -43,7 +44,7 @@ public class Timer : MonoBehaviour {
 				tens = defaultTens;
 				singles = defaultSingles;
 				transform.GetComponent<CanvasGroup>().alpha = 0f;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<RatMovement>().deactivateRagemode();
+                OnDeactivateRageMode();
 			}
 			mytext = "0:"+tens+singles;
 			transform.GetComponent<Text> ().text = mytext;

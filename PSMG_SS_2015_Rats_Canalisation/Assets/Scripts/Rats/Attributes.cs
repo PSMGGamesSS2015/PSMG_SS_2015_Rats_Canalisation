@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class Attributes : MonoBehaviour {
 	public int maxHealth = 10;
 	public int maxHunger = 5;
-	private int health;
-	private int hunger;
+	public static int health;
+	public static int hunger;
 	private float pastTime = 0;
 	public int timeToHeal = 10; //in seconds
 	private static int normalHealing = 1;
@@ -14,16 +14,14 @@ public class Attributes : MonoBehaviour {
 	public int timeToDropHungerOneValue = 10; //in seconds
 	private float pastHungerTime = 0;
 	public int looseLifeWhileHungry = 2;
-	public float waitingInfoText = 1f;
-	public float waitingDamage = 0.25f;
-	private bool justDied = false;
+	
+
+    public delegate void DamageAction();
+    public static event DamageAction OnDamageGotten;
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
-		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
-		health = maxHealth;
-		hunger = maxHunger;
+        setFullStats();
 		
 	}
 	
@@ -35,13 +33,8 @@ public class Attributes : MonoBehaviour {
 		if (pastTime > timeToHeal) {//Heal from time to time
 			AutomaticalLifeHeal();
 		}
-		if (health <= 0) {//If the player dies
-			Die();
-			
-		}
 		if (pastHungerTime > timeToDropHungerOneValue ) {//Drop Hunger
-			bool modeActive = transform.GetComponent<RatMovement> ().checkGodMode() ||
-				transform.GetComponent<RatMovement> ().checkRageMode ();
+			bool modeActive = RatManager.isRageMode || RatManager.isGodMode;
 			if(hunger > 0 && !modeActive){
 				AutomaticalHungerDrop();
 			}
@@ -50,13 +43,25 @@ public class Attributes : MonoBehaviour {
 				pastHungerTime -= timeToDropHungerOneValue;
 			}
 		}
-		checkHeight ();
 	}
 
-	private void checkHeight(){
-		if (transform.position.y < -10)
-			Die ();
-	}
+    void OnEnable()
+    {
+        RatManager.OnDie += setFullStats;
+    }
+
+    void OnDisable()
+    {
+        RatManager.OnDie -= setFullStats;
+    }
+
+    public void setFullStats()
+    {
+        health = maxHealth;
+        hunger = maxHunger;
+    }
+
+	
 	
 	private void AutomaticalHungerDrop(){
 		if(hunger > 0){
@@ -75,20 +80,8 @@ public class Attributes : MonoBehaviour {
 	}
 
 	
-	public void goToLastCheckpoint()
-	{
-		this.transform.position = GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getSpawnpointPosition();
-		this.transform.LookAt(GameObject.FindGameObjectWithTag("Respawn").GetComponent<CheckpointTrigger>().getDirection());
-	}
 	
-	IEnumerator text()
-	{
-		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 1f;
-		justDied = true;
-		yield return new WaitForSeconds(waitingInfoText);
-		GameObject.FindGameObjectWithTag ("Lost").GetComponent<CanvasGroup>().alpha = 0f;
-		justDied = false;
-	}
+	
 	
 	public void ChangeHunger (int value){
 		hunger += value;
@@ -97,29 +90,16 @@ public class Attributes : MonoBehaviour {
 	}
 	
 	public void ChangeLife (int value){
-		bool modeActive = transform.GetComponent<RatMovement> ().checkGodMode() ||
-			transform.GetComponent<RatMovement> ().checkRageMode ();
-		if (value < 0 && !justDied && !modeActive)
-			StartCoroutine (damageScreen ());
-		health += value;
-		if (health > maxHealth)
-			health = maxHealth;
+		if (value + health > maxHealth)
+        {
+            health = maxHealth;
+        } else{
+            health += value;
+            OnDamageGotten();
+        }
+			
 	}
-	
-	IEnumerator damageScreen()
-	{
-		GameObject.FindGameObjectWithTag ("damagesound").GetComponent<AudioSource>().Play();
-		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0.5f;
-		yield return new WaitForSeconds(waitingDamage);
-		GameObject.FindGameObjectWithTag ("Damage").GetComponent<CanvasGroup>().alpha = 0f;
 		
-	}
-	
-	public bool diedcheck(){
-		return justDied;
-	}
-	
-	
 	public int GetCurrentHunger(){
 		return hunger;
 	}
@@ -134,18 +114,6 @@ public class Attributes : MonoBehaviour {
 			hunger++;
 		}
 		ChangeHunger(1);
-	}
-
-	public void Die(){
-		if (!GameObject.FindGameObjectWithTag ("Player").GetComponent<RatMovement> ().checkGodMode()) {
-			health = maxHealth;
-			hunger = maxHunger;
-			StartCoroutine (text ());   
-			this.transform.position = GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getSpawnpointPosition ();
-			this.transform.LookAt (GameObject.FindGameObjectWithTag ("Respawn").GetComponent<CheckpointTrigger> ().getDirection ());
-			transform.GetComponent<RatMovement>().deactivateRagemode();
-			GameObject.FindGameObjectWithTag("Timer").GetComponent<CanvasGroup>().alpha = 0f;
-		}
 	}
 	
 }

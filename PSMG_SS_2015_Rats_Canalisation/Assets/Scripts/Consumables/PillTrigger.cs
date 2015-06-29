@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class PillTrigger : MonoBehaviour {
-	private Vector3 startPos; 
+	private Vector3 startPos;
+
+    public delegate void PillAction();
+    public static event PillAction OnPillConsumed;
 	
 	// Use this for initialization
 	void Start () {
@@ -10,22 +13,28 @@ public class PillTrigger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		if (player.GetComponent<Attributes> ().diedcheck ()) {
-			playerDied();
-		}	
+	void Update () {	
 	}
+
+    void OnEnable()
+    {
+        RatManager.OnDie += RespawnPill;
+    }
+
+    void DisAble()
+    {
+        RatManager.OnDie -= RespawnPill;
+    }
 	
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<RatMovement>().gotPill();
+            OnPillConsumed();
 			transform.position = new Vector3(0,-150,0);
 		}
 		
 	}
 	
-	void playerDied(){
+	void RespawnPill(){
 		transform.position = startPos;
 	}
 }

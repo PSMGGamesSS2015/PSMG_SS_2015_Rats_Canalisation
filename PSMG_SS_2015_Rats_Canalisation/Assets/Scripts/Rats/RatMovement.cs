@@ -14,9 +14,7 @@ public class RatMovement : MonoBehaviour
     public bool isGrounded = false;
     public bool isAtWall = false;
 	public float godModeSpeed = 10f;
-	public bool godModeActive = false;
 	public float rageModeSpeed = 5f;
-	public bool rageModeActive = false;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
 
@@ -30,16 +28,11 @@ public class RatMovement : MonoBehaviour
     void Update()
     {
         Jump();
-		checkZeroPoint ();
-		GodMode ();
 		Attack ();
-		if (!godModeActive && !rageModeActive) {
+		if (!RatManager.isGodMode && !RatManager.isRageMode) {
 			Run ();
-			Sneak ();
 			NormalizeSpeed ();
-		} else {
-			extremeHeal();
-		}
+		} 
     }
 
     void FixedUpdate()
@@ -53,20 +46,27 @@ public class RatMovement : MonoBehaviour
 		}
     }
 
+
+    void OnEnable()
+    {
+        PillTrigger.OnPillConsumed += ChangeSpeedToRageMode;
+        Timer.OnDeactivateRageMode += RageModeDeactivate;
+        RatManager.OnGodModeToggle += GodModeToggle;
+    }
+
+    void OnDisable()
+    {
+        PillTrigger.OnPillConsumed -= ChangeSpeedToRageMode;
+        Timer.OnDeactivateRageMode -= RageModeDeactivate;
+        RatManager.OnGodModeToggle -= GodModeToggle;
+    }
+
     private void Run()
     {
 		int currentHunger = transform.GetComponent<Attributes>().GetCurrentHunger();
-        if (Input.GetKeyDown(KeyCode.LeftControl) && currentHunger>0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && currentHunger > 0)
         {
             movementSpeed = runSpeed;
-        }
-    }
-
-    public void Sneak()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            movementSpeed = slowSpeed;
         }
     }
 
@@ -141,7 +141,7 @@ public class RatMovement : MonoBehaviour
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
         }
-		if (Input.GetKeyDown(KeyCode.Space) && godModeActive)
+		if (Input.GetKeyDown(KeyCode.Space) && RatManager.isGodMode)
 		{
 			isGrounded = false;
 			GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
@@ -180,54 +180,27 @@ public class RatMovement : MonoBehaviour
 		}
 	}
 
-	private void checkZeroPoint(){
-		if (transform.position.y <= -50)
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Attributes>().Die();
-	}
-
     private void Turn(float inputSignal)
     {
         float angle = inputSignal * rotationSpeed;
         transform.Rotate(transform.up * angle);
     }
 
-	private void GodMode(){
-		if (Input.GetKeyDown (KeyCode.L) && !PauseController.isPaused)  {
-			if (godModeActive){
-				godModeActive = false;
-				movementSpeed = generalMovementSpeed;
-			}
-			else{
-				godModeActive = true;
-				movementSpeed = godModeSpeed;
-			}
-		}
-
+	private void GodModeToggle(){
+        if(!RatManager.isGodMode){
+            movementSpeed = generalMovementSpeed;
+        } else {
+            movementSpeed = godModeSpeed;
+        }
 	}
 
-	public bool checkGodMode(){
-		return godModeActive;
-	}
-
-	public bool checkRageMode(){
-		return rageModeActive;
-	}
-
-	private void extremeHeal(){
-		transform.GetComponent<Attributes>().ChangeLife(5);
-	}
-
-	public void gotPill(){
-		godModeActive = false;
-		rageModeActive = true;
-		transform.GetComponent<ParticleSystem>().enableEmission = true;
+	public void ChangeSpeedToRageMode(){
 		movementSpeed = rageModeSpeed;
 	}
 
-	public void deactivateRagemode(){
-		rageModeActive = false;
-		movementSpeed = generalMovementSpeed;
-		transform.GetComponent<ParticleSystem>().enableEmission = false;
-	}
+    private void RageModeDeactivate()
+    {
+        movementSpeed = generalMovementSpeed;
+    }
 	
 }
