@@ -18,6 +18,7 @@ public class LightButton : MonoBehaviour {
 	void Start () {
 		button = GameObject.FindGameObjectWithTag ("PressButton");
 		button.GetComponent<CanvasGroup>().alpha = 0f;
+		transform.GetComponent<ParticleSystem>().enableEmission = false;
 	}
 	
 	// Update is called once per frame
@@ -28,13 +29,13 @@ public class LightButton : MonoBehaviour {
 		Vector3 rat = GameObject.FindGameObjectWithTag("Player").transform.position;
 		float Realdistance = Vector3.Distance (transform.position, rat);
 		if (Realdistance <= reactionDistance) {	
-			playerIsNear ();
+			playerIsNearButton ();
 		} 
 	}
 	
-	private void playerIsNear(){
+	private void playerIsNearButton(){
 		if (Input.GetKeyDown (KeyCode.E)) {
-			DoStuffWithButton();
+			DoStuffWithButtons();
 			DoStuffWithTarget(OnLight, true);
 			if(OffLight1 != null)DoStuffWithTarget(OffLight1, false);
 			if(OffLight2 != null)DoStuffWithTarget(OffLight2, false);
@@ -47,13 +48,13 @@ public class LightButton : MonoBehaviour {
 		button.GetComponent<CanvasGroup>().alpha = 0f;
 	}
 	
-	private void DoStuffWithButton(){
-		transform.GetChild (0).GetComponent<ParticleSystem> ().loop = true;
+	private void DoStuffWithButtons(){
+		transform.GetComponent<ParticleSystem>().enableEmission = true ;
 		if (OffButton1 != null) {
-			OffButton1.transform.GetChild (0).GetComponent<ParticleSystem> ().loop = false;
+			OffButton1.transform.GetComponent<ParticleSystem> ().enableEmission = false;
 		}
 		if (OffButton2 != null) {
-			OffButton2.transform.GetChild (0).GetComponent<ParticleSystem> ().loop = false;
+			OffButton2.transform.GetComponent<ParticleSystem> ().enableEmission = false;
 		}
 	}
 	

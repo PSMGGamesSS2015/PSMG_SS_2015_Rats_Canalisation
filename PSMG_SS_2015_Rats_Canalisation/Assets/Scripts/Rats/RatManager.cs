@@ -39,7 +39,6 @@ public class RatManager : MonoBehaviour {
     private void RageModeActivate()
     {
         isRageMode = true;
-
         isGodMode = false;
         transform.GetComponent<ParticleSystem>().enableEmission = true;
 
