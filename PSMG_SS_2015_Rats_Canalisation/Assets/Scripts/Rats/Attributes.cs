@@ -90,12 +90,14 @@ public class Attributes : MonoBehaviour {
 	}
 	
 	public void ChangeLife (int value){
+		if (value < 0) {
+			OnDamageGotten();
+		}
 		if (value + health > maxHealth)
         {
             health = maxHealth;
         } else{
             health += value;
-            OnDamageGotten();
         }
 			
 	}
