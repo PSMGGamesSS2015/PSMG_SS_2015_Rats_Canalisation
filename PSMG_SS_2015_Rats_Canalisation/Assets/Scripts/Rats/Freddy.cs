@@ -22,8 +22,6 @@ public class Freddy : MonoBehaviour {
 		talkBox.GetComponent<CanvasGroup>().alpha = 0f;
 		talkText = GameObject.FindGameObjectWithTag("Talktext");
 		talkText.GetComponent<CanvasGroup>().alpha = 0f;
-		Text freddystext = talkText.GetComponent<Text> ();
-		freddystext.text = FreddysText;
 	}
 	
 	// Update is called once per frame
@@ -49,6 +47,8 @@ public class Freddy : MonoBehaviour {
 
 	private void playerIsNear(){
 		if (Input.GetKeyDown (KeyCode.E)) {
+			Text freddystext = talkText.GetComponent<Text> ();
+			freddystext.text = FreddysText;
 			keyHasBeenPressed = true;
 			talk.GetComponent<CanvasGroup>().alpha = 0f;
 			StartCoroutine (box ());
