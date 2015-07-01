@@ -37,48 +37,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _OcclusionMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _EmissionMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailMask
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailAlbedoMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MetallicGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _Fresnel
         second:
           m_Texture: {fileID: 2800000, guid: 5b5c5575fd4c74abd9f7b30862fb76a3, type: 3}
@@ -121,6 +79,48 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ReflectiveColorCube
         second:
           m_Texture: {fileID: 8900000, guid: 9cda328e4b6954d70841a8a66f42ec08, type: 3}
@@ -143,6 +143,26 @@ Material:
         first:
           name: _DstBlend
         second: 0
+      data:
+        first:
+          name: _WaveScale
+        second: .118000001
+      data:
+        first:
+          name: _ReflDistort
+        second: .439999998
+      data:
+        first:
+          name: _RefrDistort
+        second: .400000006
+      data:
+        first:
+          name: _FresnelScale
+        second: .75
+      data:
+        first:
+          name: _GerstnerIntensity
+        second: 1
       data:
         first:
           name: _Parallax
@@ -183,26 +203,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _WaveScale
-        second: .118000001
-      data:
-        first:
-          name: _ReflDistort
-        second: .439999998
-      data:
-        first:
-          name: _RefrDistort
-        second: .400000006
-      data:
-        first:
-          name: _FresnelScale
-        second: .75
-      data:
-        first:
-          name: _GerstnerIntensity
-        second: 1
     m_Colors:
       data:
         first:
@@ -216,10 +216,6 @@ Material:
         first:
           name: _MainTex_ST
         second: {r: 1, g: 1, b: 0, a: 0}
-      data:
-        first:
-          name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _RefrColor
@@ -324,6 +320,10 @@ Material:
         first:
           name: _horizonColor
         second: {r: .172000006, g: .463, b: .435000002, a: 0}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _ReflectiveColorCube_ST
