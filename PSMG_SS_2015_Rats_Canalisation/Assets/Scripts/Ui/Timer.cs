@@ -50,4 +50,9 @@ public class Timer : MonoBehaviour {
 			transform.GetComponent<Text> ().text = mytext;
 		}
 	}
+
+	public void setDefaults(){
+		tens = defaultTens;
+		singles = defaultSingles;
+	}
 }

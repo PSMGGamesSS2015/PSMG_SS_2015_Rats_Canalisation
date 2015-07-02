@@ -5,11 +5,12 @@ public class Rotor : MonoBehaviour {
 	private bool active = true;
 	private int smooth = 20;
 	public int rotationSpeed = 2;
+
 	
 	
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	//Do stuff if collision with player
