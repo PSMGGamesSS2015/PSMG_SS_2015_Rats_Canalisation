@@ -5,6 +5,9 @@ public class RatManager : MonoBehaviour {
 
     public static bool isRageMode = false;
     public static bool isGodMode = false;
+    public static bool isWalking = false;
+    public static bool isRunning = false;
+    public static bool isJumping = false;
 
     public delegate void GodModeToggle();
     public static event GodModeToggle OnGodModeToggle;

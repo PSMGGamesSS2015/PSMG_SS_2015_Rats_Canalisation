@@ -32,7 +32,12 @@ public class RatMovement : MonoBehaviour
 		if (!RatManager.isGodMode && !RatManager.isRageMode) {
 			Run ();
 			NormalizeSpeed ();
-		} 
+		}
+
+        if (isGrounded)
+        {
+            RatManager.isJumping = false;
+        }
     }
 
     void FixedUpdate()
@@ -44,6 +49,7 @@ public class RatMovement : MonoBehaviour
 		if (!GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraMovement> ().firstPersonActive ()) {
 			Move (moveHorizontal, moveVertical);
 		}
+        
     }
 
 
@@ -66,7 +72,12 @@ public class RatMovement : MonoBehaviour
 		int currentHunger = transform.GetComponent<Attributes>().GetCurrentHunger();
         if (Input.GetKeyDown(KeyCode.LeftShift) && currentHunger > 0)
         {
+            RatManager.isRunning = true;
             movementSpeed = runSpeed;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            RatManager.isRunning = false;
         }
     }
 
@@ -138,8 +149,10 @@ public class RatMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            RatManager.isJumping = true;
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+            
         }
 		if (Input.GetKeyDown(KeyCode.Space) && RatManager.isGodMode)
 		{
@@ -158,9 +171,14 @@ public class RatMovement : MonoBehaviour
         {
             if (horizontal != 0 || vertical != 0)
             {
+                RatManager.isWalking = true;
                 Vector3 newPosition = transform.forward.normalized * vertical * movementSpeed * Time.deltaTime;
                 newPosition += transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
                 GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
+            }
+            else 
+            {
+                RatManager.isWalking = false;
             }
         }
 
