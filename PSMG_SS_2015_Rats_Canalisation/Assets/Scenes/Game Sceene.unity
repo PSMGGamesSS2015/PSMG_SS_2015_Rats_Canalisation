@@ -25453,7 +25453,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468486203}
   m_Layer: 2
-  m_Name: Level 3 Checkpoint 2 Direction
+  m_Name: Level 3 Checkpoint 3 Direction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26871,6 +26871,33 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 480962, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_PrefabInternal: {fileID: 1663522308}
+--- !u!1 &522428698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 522428699}
+  m_Layer: 2
+  m_Name: Level 3 Checkpoint 2 Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522428699
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522428698}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: 1.58299994, y: -.324999988, z: -11.1800003}
+  m_LocalScale: {x: 10, y: 1, z: .100000016}
+  m_Children: []
+  m_Father: {fileID: 1841490162}
+  m_RootOrder: 0
 --- !u!1 &523657355
 GameObject:
   m_ObjectHideFlags: 0
@@ -73976,7 +74003,7 @@ GameObject:
   - 23: {fileID: 1455976484}
   - 114: {fileID: 1455976483}
   m_Layer: 2
-  m_Name: Level 3 Checkpoint 2
+  m_Name: Level 3 Checkpoint 3
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73995,7 +74022,7 @@ Transform:
   - {fileID: 2067856557}
   - {fileID: 468486203}
   m_Father: {fileID: 1939434472}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &1455976483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74379,7 +74406,7 @@ GameObject:
   - 23: {fileID: 1463222092}
   - 114: {fileID: 1463222091}
   m_Layer: 2
-  m_Name: Level 3 Checkpoint 3
+  m_Name: Level 3 Checkpoint 4
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74398,7 +74425,7 @@ Transform:
   - {fileID: 1243287935}
   - {fileID: 751591673}
   m_Father: {fileID: 1939434472}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &1463222091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92225,6 +92252,95 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a21f52f4f918aa46885860ad594dad7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1841490161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1841490162}
+  - 33: {fileID: 1841490166}
+  - 65: {fileID: 1841490165}
+  - 23: {fileID: 1841490164}
+  - 114: {fileID: 1841490163}
+  m_Layer: 2
+  m_Name: Level 3 Checkpoint 2
+  m_TagString: Respawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841490162
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841490161}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: -81.6719971, y: -4.8499999, z: 11.79}
+  m_LocalScale: {x: 2.6400001, y: 2, z: .199999943}
+  m_Children:
+  - {fileID: 522428699}
+  - {fileID: 1981335425}
+  m_Father: {fileID: 1939434472}
+  m_RootOrder: 8
+--- !u!114 &1841490163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841490161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce28f615c9d23e448a8a95f8dcfd229a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawnpoint: {fileID: 522428699}
+  Direction: {fileID: 1981335425}
+--- !u!23 &1841490164
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841490161}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1841490165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841490161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1841490166
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841490161}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1842051609
 GameObject:
   m_ObjectHideFlags: 0
@@ -96988,6 +97104,7 @@ Transform:
   - {fileID: 1350043623}
   - {fileID: 238829683}
   - {fileID: 424898664}
+  - {fileID: 1841490162}
   - {fileID: 1455976482}
   - {fileID: 1463222090}
   m_Father: {fileID: 1218391045}
@@ -99118,6 +99235,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1978896896}
   m_Mesh: {fileID: 4300000, guid: edf158a61fe4c2246883a36a1eee5c55, type: 3}
+--- !u!1 &1981335424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1981335425}
+  m_Layer: 2
+  m_Name: Level 3 Checkpoint 2 Direction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1981335425
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981335424}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: 2.38199997, y: -.148000002, z: -6.88000011}
+  m_LocalScale: {x: 10, y: 1, z: .100000016}
+  m_Children: []
+  m_Father: {fileID: 1841490162}
+  m_RootOrder: 1
 --- !u!1001 &1982395652
 Prefab:
   m_ObjectHideFlags: 0
@@ -102387,7 +102531,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2067856557}
   m_Layer: 2
-  m_Name: Level 3 Checkpoint 2 Spawnpoint
+  m_Name: Level 3 Checkpoint 3 Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
