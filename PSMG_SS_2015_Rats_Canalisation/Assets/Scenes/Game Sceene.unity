@@ -28913,7 +28913,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 562314162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00999999978, y: -.0280000009, z: .0610000007}
+  m_LocalPosition: {x: -.0979999974, y: -.0500000007, z: .0610000007}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 1380726724}
@@ -69737,7 +69737,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380726723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aafbe8793372e74eb8594a68621922b, type: 3}
   m_Name: 
@@ -69753,7 +69753,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380726723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71206d55fa54baf4a9005f61e8ae0bfa, type: 3}
   m_Name: 
@@ -69774,6 +69774,48 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: a9fa01051450d5848a905fe6a26806f1, type: 3}
+--- !u!114 &1380726728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380726723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbdbf0ea747b16418ffab0a04d5ad52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gate: {fileID: 2070205697}
+  wantToClose: 0
+  gateToggleSlowness: 2
+--- !u!114 &1380726729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380726723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be260396dc3d544f8d3d55dfef95c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionDistance: 1.5
+  showTime: 1
+  alreadyActivated: 0
+--- !u!114 &1380726733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380726723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbdbf0ea747b16418ffab0a04d5ad52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gate: {fileID: 1569704271}
+  wantToClose: 0
+  gateToggleSlowness: 2
 --- !u!4 &1381101780
 Transform:
   m_PrefabParentObject: {fileID: 472114, guid: 8a21f52f4f918aa46885860ad594dad7, type: 2}
