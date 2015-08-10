@@ -2885,11 +2885,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401174, guid: 80ebb59123123d54f905369571e77f76, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.11399984
+      value: 2.39400005
       objectReference: {fileID: 0}
     - target: {fileID: 401174, guid: 80ebb59123123d54f905369571e77f76, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .46600008
+      value: .465999991
       objectReference: {fileID: 0}
     - target: {fileID: 401174, guid: 80ebb59123123d54f905369571e77f76, type: 2}
       propertyPath: m_LocalRotation.x
@@ -69753,15 +69753,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380726723}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71206d55fa54baf4a9005f61e8ae0bfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cbdbf0ea747b16418ffab0a04d5ad52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2070205697}
-  target2: {fileID: 1569704271}
-  reactionDistance: 1
-  showTime: 1
+  gate: {fileID: 1808482533}
+  wantToClose: 1
+  gateToggleSlowness: 2
 --- !u!64 &1380726727
 MeshCollider:
   m_ObjectHideFlags: 0
