@@ -8,6 +8,10 @@ public class FuseBoxCamera : MonoBehaviour {
     public float cameraShowDuration = 2f;
 
 
+    void Awake()
+    {
+        ActionCamera.enabled = false;
+    }
 
 	// Use this for initialization
 	void Start () {
