@@ -66,12 +66,10 @@ public class ToggleGate : MonoBehaviour {
         {        
             newGatePos.y -= 2f;
             animate = true;
-            wantToClose = false;
         }
         else { 
             newGatePos.y += 2f;
             animate = true;
-            wantToClose = true;
         }
        
 
