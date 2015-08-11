@@ -17,12 +17,16 @@ public class ShowLevel1 : MonoBehaviour {
     private bool done6 = false;
     private Transform camera;
     private Transform step1, step2, step3, step4, step5;
-    
+
+    void Awake()
+    {
+        ShowLevel1Camera = GameObject.Find("ShowLevel1Camera").GetComponent<Camera>();
+        ShowLevel1Camera.enabled = false;
+    }
 
 	// Use this for initialization
 	void Start () {
         MainCamera = GameObject.Find("FirstPerson").GetComponent<Camera>();
-        ShowLevel1Camera = GameObject.Find("ShowLevel1Camera").GetComponent<Camera>();
         camera = GameObject.Find("ShowLevel1Camera").GetComponent<Transform>();
         step1 = GameObject.Find("Level1CameraStep1").GetComponent<Transform>();
         step2 = GameObject.Find("Level1CameraStep2").GetComponent<Transform>();
