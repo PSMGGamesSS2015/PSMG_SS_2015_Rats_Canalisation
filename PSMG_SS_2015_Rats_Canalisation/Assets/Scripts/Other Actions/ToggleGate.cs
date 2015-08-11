@@ -4,8 +4,6 @@ using System.Collections;
 public class ToggleGate : MonoBehaviour {
 
     public GameObject gate;
-    private GameObject rat;
-    private float reactionDistance;
     private bool alreadyActivated;
     public bool wantToClose;
     private Vector3 gatePos;
@@ -13,24 +11,22 @@ public class ToggleGate : MonoBehaviour {
     private Vector3 newGatePos;
     private float lerp;
     public float gateToggleSlowness = 2;
+    private bool isPlayerNear;
 
 	// Use this for initialization
 	void Start () {
-        reactionDistance = this.GetComponent<ShowFuseBoxText>().reactionDistance;
-        rat = GameObject.FindGameObjectWithTag("Player");
 
 	}
 
     void FixedUpdate()
     {
+        isPlayerNear = this.GetComponent<ShowFuseBoxText>().isPlayerNear;
         alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
         if (!gate || alreadyActivated)
         {
             return;
         }
-        Vector3 ratPos = rat.transform.position;
-        float realdistance = Vector3.Distance(transform.position, ratPos);
-        if (realdistance <= reactionDistance)
+        if (isPlayerNear)
         {
             playerIsNear();
         }

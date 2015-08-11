@@ -8,6 +8,7 @@ public class ShowFuseBoxText : MonoBehaviour {
     public int showTime = 1;
     private bool isShowing = false;
     public bool alreadyActivated = false;
+    public bool isPlayerNear = false;
 
 	// Use this for initialization
 	void Start () 
@@ -27,9 +28,12 @@ public class ShowFuseBoxText : MonoBehaviour {
 
         Vector3 ratPos = rat.transform.position;
         float realdistance = Vector3.Distance (transform.position, ratPos);
-		if (realdistance <= reactionDistance) {	
-			playerIsNear ();
-		} 
+        if (realdistance <= reactionDistance)
+        {
+            isPlayerNear = true;
+            playerIsNear();
+        }
+        else isPlayerNear = false;
     }
 
     private void playerIsNear()
