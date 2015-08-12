@@ -31,18 +31,34 @@ public class Attributes : MonoBehaviour {
 		pastHungerTime += Time.deltaTime;
 		
 		if (pastTime > timeToHeal) {//Heal from time to time
-			AutomaticalLifeHeal();
+            if (ShowLevel1.isInCameraOverview)
+            {
+                pastTime -= timeToHeal;
+            }
+            else
+            {
+                AutomaticalLifeHeal();
+            }
 		}
-		if (pastHungerTime > timeToDropHungerOneValue ) {//Drop Hunger
-			bool modeActive = RatManager.isRageMode || RatManager.isGodMode;
-			if(hunger > 0 && !modeActive){
-				AutomaticalHungerDrop();
-			}
-			else {
-				ChangeLife (-looseLifeWhileHungry);
-				pastHungerTime -= timeToDropHungerOneValue;
-			}
-		}
+		if (pastHungerTime > timeToDropHungerOneValue ) 
+        {//Drop Hunger
+            if (ShowLevel1.isInCameraOverview)
+            {
+                pastHungerTime -= timeToDropHungerOneValue;
+            } else 
+                {
+                    bool modeActive = RatManager.isRageMode || RatManager.isGodMode;
+                    if (hunger > 0 && !modeActive)
+                    {
+                        AutomaticalHungerDrop();
+                    }
+                    else
+                    {
+                        ChangeLife(-looseLifeWhileHungry);
+                        pastHungerTime -= timeToDropHungerOneValue;
+                    }
+                }
+		    }
 	}
 
     void OnEnable()

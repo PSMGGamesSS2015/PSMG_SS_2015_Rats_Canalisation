@@ -16,6 +16,7 @@ public class ShowLevel3 : MonoBehaviour {
     private bool done5 = false;
     private Transform camera;
     private Transform step1, step2, step3, step4;
+   
 
     void Awake()
     {
@@ -98,6 +99,8 @@ public class ShowLevel3 : MonoBehaviour {
     IEnumerator switchBackToMainCamera()
     {
         yield return new WaitForSeconds(2);
+
+        ShowLevel1.isInCameraOverview = false;
         MainCamera.enabled = true;
         ShowLevel3Camera.enabled = false;
     }
@@ -109,6 +112,7 @@ public class ShowLevel3 : MonoBehaviour {
         {
             if (!isAlreadyShown)
             {
+                ShowLevel1.isInCameraOverview = true;
                 isAlreadyShown = true;
                 showLevel3();
 

@@ -155,6 +155,8 @@ public class ShowLevel2 : MonoBehaviour {
     IEnumerator switchBackToMainCamera()
     {
         yield return new WaitForSeconds(1);
+
+        ShowLevel1.isInCameraOverview = false;
         MainCamera.enabled = true;
         ShowLevel2Camera.enabled = false;
     }
@@ -166,6 +168,7 @@ public class ShowLevel2 : MonoBehaviour {
         {
             if (!isAlreadyShown)
             {
+                ShowLevel1.isInCameraOverview = true;
                 isAlreadyShown = true;
                 showLevel2();
 

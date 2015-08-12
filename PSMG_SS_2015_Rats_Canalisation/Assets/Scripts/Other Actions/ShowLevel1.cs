@@ -18,6 +18,9 @@ public class ShowLevel1 : MonoBehaviour {
     private Transform camera;
     private Transform step1, step2, step3, step4, step5;
 
+    public static bool isInCameraOverview = false;
+
+
     void Awake()
     {
         ShowLevel1Camera = GameObject.Find("ShowLevel1Camera").GetComponent<Camera>();
@@ -109,8 +112,10 @@ public class ShowLevel1 : MonoBehaviour {
     IEnumerator switchBackToMainCamera()
     {
         yield return new WaitForSeconds(1);
+
+        isInCameraOverview = false;
         MainCamera.enabled = true;
-            ShowLevel1Camera.enabled = false;
+        ShowLevel1Camera.enabled = false;
     }
 
 
@@ -120,6 +125,7 @@ public class ShowLevel1 : MonoBehaviour {
         {
             if (!isAlreadyShown)
             {
+                isInCameraOverview = true;
                 isAlreadyShown = true;
                 showLevel1();
                
