@@ -26,7 +26,7 @@ public class RatAnimationController : MonoBehaviour {
             isWalking = RatManager.isWalking;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isRunning != RatManager.isRunning)
         {
             anim.SetBool("isRunning", RatManager.isRunning);
             isRunning = RatManager.isRunning;
