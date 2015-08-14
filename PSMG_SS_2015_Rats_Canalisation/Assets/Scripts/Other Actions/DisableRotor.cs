@@ -7,6 +7,7 @@ public class DisableRotor : MonoBehaviour {
     private bool alreadyActivated=false;
     private Vector3 rotPos;
     private bool isPlayerNear;
+    public float rotorDisableDelay = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +42,13 @@ public class DisableRotor : MonoBehaviour {
 
     private void disableRotor()
     {
+        StartCoroutine(disableRotorAfetDelay()); 
+    }
+
+    IEnumerator disableRotorAfetDelay()
+    {
+        yield return new WaitForSeconds(rotorDisableDelay);
+
         rotor.GetComponent<Rotor>().changeRotorActiveState(false);
         rotor.transform.eulerAngles = rotPos;
     }
