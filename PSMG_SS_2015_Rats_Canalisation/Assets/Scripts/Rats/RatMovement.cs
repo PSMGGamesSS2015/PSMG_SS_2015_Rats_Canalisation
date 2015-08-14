@@ -75,15 +75,16 @@ public class RatMovement : MonoBehaviour
             RatManager.isRunning = true;
             movementSpeed = runSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || currentHunger <= 0)
         {
             RatManager.isRunning = false;
+            movementSpeed = generalMovementSpeed;
         }
     }
 
     public void NormalizeSpeed()
     {
-        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             movementSpeed = generalMovementSpeed;
         }
