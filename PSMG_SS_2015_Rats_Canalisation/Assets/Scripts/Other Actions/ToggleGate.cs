@@ -4,7 +4,7 @@ using System.Collections;
 public class ToggleGate : MonoBehaviour {
 
     public GameObject gate;
-    private bool alreadyActivated;
+    private bool alreadyActivated=false;
     public bool wantToClose;
     private Vector3 gatePos;
     private bool animate = false;
@@ -21,11 +21,12 @@ public class ToggleGate : MonoBehaviour {
     void FixedUpdate()
     {
         isPlayerNear = this.GetComponent<ShowFuseBoxText>().isPlayerNear;
-        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
+        
         if (!gate || alreadyActivated)
         {
             return;
         }
+        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
         if (isPlayerNear)
         {
             playerIsNear();

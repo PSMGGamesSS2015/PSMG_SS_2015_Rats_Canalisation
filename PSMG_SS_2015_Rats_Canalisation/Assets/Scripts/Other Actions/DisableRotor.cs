@@ -4,7 +4,7 @@ using System.Collections;
 public class DisableRotor : MonoBehaviour {
 
     public GameObject rotor;
-    private bool alreadyActivated;
+    private bool alreadyActivated=false;
     private Vector3 rotPos;
     private bool isPlayerNear;
 
@@ -16,11 +16,12 @@ public class DisableRotor : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         isPlayerNear = this.GetComponent<ShowFuseBoxText>().isPlayerNear;
-        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
+        
         if (!rotor || alreadyActivated)
         {
             return;
         }
+        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
         if (isPlayerNear)
         {
             playerIsNear();

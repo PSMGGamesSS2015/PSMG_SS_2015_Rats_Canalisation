@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FuseBoxCamera : MonoBehaviour {
     private bool isPlayerNear;
-    private bool alreadyActivated;
+    private bool alreadyActivated = false;
     public Camera ActionCamera;
     private Camera MainCamera;
     public float cameraShowDuration = 2f;
@@ -21,13 +21,14 @@ public class FuseBoxCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
+        
         isPlayerNear = this.GetComponent<ShowFuseBoxText>().isPlayerNear;
-        if (alreadyActivated || !ActionCamera)
+        if (!ActionCamera || alreadyActivated)
         {
+
             return;
         }
-
+        alreadyActivated = this.GetComponent<ShowFuseBoxText>().alreadyActivated;
         if (isPlayerNear)
         {
             if (Input.GetKeyDown(KeyCode.E))
