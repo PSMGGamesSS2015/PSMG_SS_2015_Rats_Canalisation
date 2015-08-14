@@ -41271,6 +41271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 1518785607}
+  rotorDisableDelay: 0
 --- !u!1001 &729529349
 Prefab:
   m_ObjectHideFlags: 0
@@ -43353,6 +43354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 1691144845}
+  rotorDisableDelay: 0
 --- !u!114 &782763629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48774,6 +48776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 1587140061}
+  rotorDisableDelay: 0
 --- !u!114 &878746359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65899,6 +65902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 1396048872}
+  rotorDisableDelay: 0
 --- !u!114 &1214868323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101969,6 +101973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 946384044}
+  rotorDisableDelay: 0
 --- !u!64 &1918982999
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -103288,6 +103293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotor: {fileID: 1908069147}
+  rotorDisableDelay: 0
 --- !u!114 &1956143765
 MonoBehaviour:
   m_ObjectHideFlags: 0
