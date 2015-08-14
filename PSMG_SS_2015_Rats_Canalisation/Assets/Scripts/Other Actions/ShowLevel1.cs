@@ -111,6 +111,8 @@ public class ShowLevel1 : MonoBehaviour {
 
     IEnumerator switchBackToMainCamera()
     {
+        done6 = false;
+
         yield return new WaitForSeconds(1);
 
         isInCameraOverview = false;
