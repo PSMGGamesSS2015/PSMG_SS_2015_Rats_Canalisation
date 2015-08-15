@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Floor
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _EMISSION _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 2
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 3333c3ca7ac195845933b5ad362f1566, type: 3}
+          m_Texture: {fileID: 2800000, guid: 694ad3547e11d6f449a98a60454a366c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 8ad76a431836fcf489677a5c140ffba0, type: 3}
+          m_Texture: {fileID: 2800000, guid: fa807d33d0423d446ab89d4d4ec11087, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -47,14 +47,14 @@ Material:
         first:
           name: _OcclusionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 947a3c7542126ce4f8477d92bcae9fbd, type: 3}
+          m_Texture: {fileID: 2800000, guid: 3c6474c448d20a94ba341ee8e5ce0d57, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: ee62dde38c63aef4dac2b91dd604680f, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2c83dafa2d386fa4cb32094e33013f78, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -75,7 +75,7 @@ Material:
         first:
           name: _MetallicGlossMap
         second:
-          m_Texture: {fileID: 2800000, guid: e54f443bc55479f4a9ded8c8a6135e20, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -94,7 +94,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: .0555999987
       data:
         first:
           name: _ZWrite
@@ -110,7 +110,7 @@ Material:
       data:
         first:
           name: _OcclusionStrength
-        second: 1
+        second: .541999996
       data:
         first:
           name: _DetailNormalMapScale
@@ -131,8 +131,8 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .322718412, g: .345588207, b: .324768782, a: 1}
+        second: {r: .511029422, g: .5, b: .510040581, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .522058845, g: .537413538, b: .537413538, a: 1}
+        second: {r: .595588207, g: .595588207, b: .595588207, a: 1}
