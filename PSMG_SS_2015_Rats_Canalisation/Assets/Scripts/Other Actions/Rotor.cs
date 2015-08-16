@@ -24,7 +24,7 @@ public class Rotor : MonoBehaviour {
 		if (active) {
 			transform.Rotate (Vector3.up * smooth * rotationSpeed * Time.deltaTime);
 		}
-		checkHowNear ();
+		//checkHowNear ();
 	}
 
 	 void checkHowNear(){
