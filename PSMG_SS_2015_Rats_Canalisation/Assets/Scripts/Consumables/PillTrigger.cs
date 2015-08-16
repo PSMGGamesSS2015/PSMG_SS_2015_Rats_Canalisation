@@ -29,6 +29,7 @@ public class PillTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
 			GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().setDefaults();
+			this.GetComponent<AudioSource>().Play();
             OnPillConsumed();
 			transform.position = new Vector3(0,-150,0);
 		}

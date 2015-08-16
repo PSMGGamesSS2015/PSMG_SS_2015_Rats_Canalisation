@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 147438}
+  target2: {fileID: 0}
   reactionDistance: 1
   showTime: 1
 --- !u!114 &11495840
@@ -322,6 +323,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  smallDistance: 1
+  middleDistance: 3
+  bigDistance: 5
 --- !u!198 &19880408
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -46,6 +46,7 @@ public class OpenButton : MonoBehaviour {
 	}
 
 	private void DoStuffWithButton(){//Lässt Partikel verschwinden
+		GameObject.FindGameObjectWithTag ("fusersound").GetComponent<AudioSource>().Play();
 		transform.GetChild (0).GetComponent<ParticleSystem> ().loop = false;
 		alreadyActivated = true;
 	}

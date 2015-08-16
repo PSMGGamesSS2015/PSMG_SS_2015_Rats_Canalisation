@@ -47,14 +47,19 @@ public class Freddy : MonoBehaviour {
 
 	private void playerIsNear(){
 		if (Input.GetKeyDown (KeyCode.E)) {
-			Text freddystext = talkText.GetComponent<Text> ();
-			freddystext.text = FreddysText;
-			keyHasBeenPressed = true;
-			talk.GetComponent<CanvasGroup>().alpha = 0f;
-			StartCoroutine (box ());
+			talking();
 		}
 		moveRightLeft ();
 		if(!isShowing && !keyHasBeenPressed)StartCoroutine (text ());
+	}
+
+	private void talking(){
+		GameObject.FindGameObjectWithTag ("freddysound").GetComponent<AudioSource> ().Play ();
+		Text freddystext = talkText.GetComponent<Text> ();
+		freddystext.text = FreddysText;
+		keyHasBeenPressed = true;
+		talk.GetComponent<CanvasGroup>().alpha = 0f;
+		StartCoroutine (box ());
 	}
 
 	IEnumerator text()

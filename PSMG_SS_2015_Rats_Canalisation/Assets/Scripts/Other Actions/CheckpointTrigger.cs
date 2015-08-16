@@ -34,6 +34,7 @@ public class CheckpointTrigger : MonoBehaviour {
         if (col.tag == "Player")
         {
             OnCheckPointReached();
+			GameObject.FindGameObjectWithTag ("cpsound").GetComponent<AudioSource>().Play();
             SpawnpointPosition = Spawnpoint.position;
             finalDirection = Direction;
         }

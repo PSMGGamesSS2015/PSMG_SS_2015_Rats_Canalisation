@@ -25,6 +25,11 @@ TagManager:
   - Talkbox
   - Talktext
   - Timer
+  - fusersound
+  - cpsound
+  - lowlifesound
+  - freddysound
+  - rotorsound
   layers:
   - Default
   - TransparentFX

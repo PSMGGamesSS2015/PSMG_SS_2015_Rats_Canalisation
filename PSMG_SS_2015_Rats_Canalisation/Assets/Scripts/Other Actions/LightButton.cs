@@ -35,6 +35,7 @@ public class LightButton : MonoBehaviour {
 	
 	private void playerIsNearButton(){
 		if (Input.GetKeyDown (KeyCode.E)) {
+			GameObject.FindGameObjectWithTag ("fusersound").GetComponent<AudioSource> ().Play ();
 			DoStuffWithButtons();
 			DoStuffWithTarget(OnLight, true);
 			if(OffLight1 != null)DoStuffWithTarget(OffLight1, false);

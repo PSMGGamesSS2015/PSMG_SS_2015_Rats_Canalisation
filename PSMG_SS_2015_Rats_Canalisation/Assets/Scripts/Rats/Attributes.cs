@@ -27,6 +27,7 @@ public class Attributes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		checkLifeNumber ();
 		pastTime += Time.deltaTime;
 		pastHungerTime += Time.deltaTime;
 		
@@ -59,6 +60,15 @@ public class Attributes : MonoBehaviour {
                     }
                 }
 		    }
+	}
+
+	void checkLifeNumber(){
+		if (health <= 3) {
+			if (GameObject.FindGameObjectWithTag ("lowlifesound").GetComponent<AudioSource> ().isPlaying == false)
+				GameObject.FindGameObjectWithTag ("lowlifesound").GetComponent<AudioSource> ().Play ();
+		} else {
+			GameObject.FindGameObjectWithTag ("lowlifesound").GetComponent<AudioSource> ().Stop();
+		}
 	}
 
     void OnEnable()
