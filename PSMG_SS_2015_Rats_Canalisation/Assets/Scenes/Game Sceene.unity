@@ -1986,7 +1986,7 @@ GameObject:
   - 23: {fileID: 51138930}
   - 54: {fileID: 51138929}
   - 136: {fileID: 51138928}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4427,7 +4427,7 @@ GameObject:
   - 23: {fileID: 100792055}
   - 54: {fileID: 100792054}
   - 136: {fileID: 100792053}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7941,7 +7941,7 @@ GameObject:
   - 23: {fileID: 128877127}
   - 95: {fileID: 128877126}
   - 64: {fileID: 128877125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12990,7 +12990,7 @@ GameObject:
   - 23: {fileID: 212014447}
   - 54: {fileID: 212014446}
   - 136: {fileID: 212014445}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14198,7 +14198,7 @@ GameObject:
   - 23: {fileID: 235612313}
   - 95: {fileID: 235612312}
   - 64: {fileID: 235612311}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19759,7 +19759,7 @@ GameObject:
   - 23: {fileID: 352576814}
   - 95: {fileID: 352576813}
   - 64: {fileID: 352576812}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20498,7 +20498,7 @@ GameObject:
   - 23: {fileID: 370220291}
   - 95: {fileID: 370220290}
   - 64: {fileID: 370220289}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26390,7 +26390,7 @@ GameObject:
   - 23: {fileID: 467938492}
   - 95: {fileID: 467938491}
   - 64: {fileID: 467938490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26586,7 +26586,7 @@ GameObject:
   - 23: {fileID: 473263155}
   - 95: {fileID: 473263154}
   - 64: {fileID: 473263153}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29799,7 +29799,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!23 &555921195
 MeshRenderer:
@@ -32334,7 +32334,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5431774, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_Constraints
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 445600, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_LocalRotation.x
@@ -32363,6 +32363,58 @@ Prefab:
     - target: {fileID: 445600, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_LocalPosition.z
       value: .132000878
+      objectReference: {fileID: 0}
+    - target: {fileID: 156790, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182608, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 180252, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 140888, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 126938, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192722, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 179088, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 110492, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 186978, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 177902, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 145226, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 111800, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
@@ -33587,7 +33639,7 @@ GameObject:
   - 23: {fileID: 607323665}
   - 95: {fileID: 607323664}
   - 64: {fileID: 607323663}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42928,7 +42980,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 790846090}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Mittelgeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51491,7 +51543,7 @@ GameObject:
   - 23: {fileID: 927830504}
   - 95: {fileID: 927830503}
   - 64: {fileID: 927830502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52877,7 +52929,7 @@ GameObject:
   - 23: {fileID: 953552538}
   - 95: {fileID: 953552537}
   - 64: {fileID: 953552536}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54925,7 +54977,7 @@ GameObject:
   - 23: {fileID: 1002718460}
   - 95: {fileID: 1002718459}
   - 64: {fileID: 1002718458}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58398,7 +58450,7 @@ GameObject:
   - 23: {fileID: 1055935567}
   - 95: {fileID: 1055935566}
   - 64: {fileID: 1055935565}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59254,7 +59306,7 @@ GameObject:
   - 23: {fileID: 1073498860}
   - 54: {fileID: 1073498859}
   - 136: {fileID: 1073498858}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60959,7 +61011,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5431774, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_Constraints
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 445600, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_LocalRotation.x
@@ -60988,6 +61040,54 @@ Prefab:
     - target: {fileID: 445600, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
       propertyPath: m_LocalPosition.z
       value: .132000685
+      objectReference: {fileID: 0}
+    - target: {fileID: 182608, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 180252, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 140888, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 126938, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192722, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 179088, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 110492, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 186978, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 177902, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 145226, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 111800, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
@@ -63296,7 +63396,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1164774267}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Seitengeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66075,7 +66175,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!23 &1227221272
 MeshRenderer:
@@ -72697,7 +72797,7 @@ GameObject:
   - 23: {fileID: 1351707249}
   - 95: {fileID: 1351707248}
   - 64: {fileID: 1351707247}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72904,7 +73004,7 @@ GameObject:
   - 23: {fileID: 1358096292}
   - 95: {fileID: 1358096291}
   - 64: {fileID: 1358096290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79241,7 +79341,7 @@ GameObject:
   - 23: {fileID: 1474115298}
   - 95: {fileID: 1474115297}
   - 64: {fileID: 1474115296}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83571,7 +83671,7 @@ GameObject:
   - 23: {fileID: 1532255098}
   - 95: {fileID: 1532255097}
   - 64: {fileID: 1532255096}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84238,7 +84338,7 @@ GameObject:
   - 23: {fileID: 1551169408}
   - 95: {fileID: 1551169407}
   - 64: {fileID: 1551169406}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85020,7 +85120,7 @@ GameObject:
   - 23: {fileID: 1561015522}
   - 54: {fileID: 1561015521}
   - 136: {fileID: 1561015520}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90047,7 +90147,7 @@ GameObject:
   - 23: {fileID: 1672124010}
   - 95: {fileID: 1672124009}
   - 64: {fileID: 1672124008}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90224,7 +90324,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1681443312}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Seitengeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93027,7 +93127,7 @@ GameObject:
   - 23: {fileID: 1739849781}
   - 95: {fileID: 1739849780}
   - 64: {fileID: 1739849779}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94074,7 +94174,7 @@ GameObject:
   - 23: {fileID: 1761894786}
   - 95: {fileID: 1761894785}
   - 64: {fileID: 1761894784}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96711,7 +96811,7 @@ GameObject:
   - 23: {fileID: 1811187364}
   - 95: {fileID: 1811187363}
   - 64: {fileID: 1811187362}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97728,7 +97828,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1830689692}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Seitengeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97934,7 +98034,7 @@ GameObject:
   - 23: {fileID: 1835299461}
   - 95: {fileID: 1835299460}
   - 64: {fileID: 1835299459}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99645,7 +99745,7 @@ GameObject:
   - 23: {fileID: 1876417022}
   - 95: {fileID: 1876417021}
   - 64: {fileID: 1876417020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100111,7 +100211,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1887784171}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Seitengeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100374,7 +100474,7 @@ GameObject:
   - 23: {fileID: 1892958851}
   - 95: {fileID: 1892958850}
   - 64: {fileID: 1892958849}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100614,7 +100714,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1897484047}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "Mittelgeh\xE4nge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103534,7 +103634,7 @@ GameObject:
   - 23: {fileID: 1967718467}
   - 54: {fileID: 1967718466}
   - 136: {fileID: 1967718465}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "BLENDER H\xE4ngeweg Befestigunsstange"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106698,7 +106798,7 @@ GameObject:
   - 23: {fileID: 2049978586}
   - 95: {fileID: 2049978585}
   - 64: {fileID: 2049978584}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BLENDER Way Befestigungsstange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
