@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FuseBoxCamera : MonoBehaviour {
+public class FuseBoxCamera : MonoBehaviour
+{
     private bool isPlayerNear;
     private bool alreadyActivated = false;
     public Camera ActionCamera;
@@ -14,14 +15,16 @@ public class FuseBoxCamera : MonoBehaviour {
         ActionCamera.enabled = false;
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         MainCamera = GameObject.Find("FirstPerson").GetComponent<Camera>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
         isPlayerNear = this.GetComponent<ShowFuseBoxText>().isPlayerNear;
         if (!ActionCamera || alreadyActivated)
         {
@@ -34,20 +37,22 @@ public class FuseBoxCamera : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 switchCamera();
-            }   
+            }
         }
-	}
+    }
 
     private void switchCamera()
     {
+        ShowLevel1.isInCameraOverview = true;
         MainCamera.enabled = false;
         ActionCamera.enabled = true;
-        StartCoroutine(switchBackToMainCamera()); 
+        StartCoroutine(switchBackToMainCamera());
     }
 
     IEnumerator switchBackToMainCamera()
     {
         yield return new WaitForSeconds(cameraShowDuration);
+        ShowLevel1.isInCameraOverview = false;
         MainCamera.enabled = true;
         ActionCamera.enabled = false;
     }

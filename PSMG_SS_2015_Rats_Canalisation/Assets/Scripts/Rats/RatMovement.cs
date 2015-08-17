@@ -9,30 +9,34 @@ public class RatMovement : MonoBehaviour
     public float runSpeed = 5f;
     public float slowSpeed = 1f;
     public float movementSpeed = generalMovementSpeed;
-	public static float generalJumpSpeed = 20f;
-	public float jumpSpeed = generalJumpSpeed;
+    public static float generalJumpSpeed = 20f;
+    public float jumpSpeed = generalJumpSpeed;
     public bool isGrounded = false;
     public bool isAtWall = false;
-	public float godModeSpeed = 10f;
-	public float rageModeSpeed = 5f;
+    public float godModeSpeed = 10f;
+    public float rageModeSpeed = 5f;
     //max Slope the Rat can jump of
     public float maxSlope = 60f;
 
     // Use this for initialization
     void Start()
     {
-		transform.GetComponent<ParticleSystem>().enableEmission = false;
+        transform.GetComponent<ParticleSystem>().enableEmission = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Jump();
-		Attack ();
-		if (!RatManager.isGodMode && !RatManager.isRageMode) {
-			Run ();
-			NormalizeSpeed ();
-		}
+        if (!ShowLevel1.isInCameraOverview)
+        {
+            Jump();
+            Attack();
+            if (!RatManager.isGodMode && !RatManager.isRageMode)
+            {
+                Run();
+                NormalizeSpeed();
+            }
+        }
 
         if (isGrounded)
         {
@@ -45,11 +49,16 @@ public class RatMovement : MonoBehaviour
         float horizontalMouseInput = Input.GetAxis("Mouse X");
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
-        Turn(horizontalMouseInput);
-		if (!GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraMovement> ().firstPersonActive ()) {
-			Move (moveHorizontal, moveVertical);
-		}
-        
+        if (!ShowLevel1.isInCameraOverview)
+        {
+            Turn(horizontalMouseInput);
+            if (!GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().firstPersonActive())
+            {
+                Move(moveHorizontal, moveVertical);
+            }
+        }
+
+
     }
 
 
@@ -69,7 +78,7 @@ public class RatMovement : MonoBehaviour
 
     private void Run()
     {
-		int currentHunger = transform.GetComponent<Attributes>().GetCurrentHunger();
+        int currentHunger = transform.GetComponent<Attributes>().GetCurrentHunger();
         if (Input.GetKeyDown(KeyCode.LeftShift) && currentHunger > 0)
         {
             RatManager.isRunning = true;
@@ -142,7 +151,7 @@ public class RatMovement : MonoBehaviour
 
     public void OnCollisionExit(Collision collisionInfo)
     {
-       // print("No longer in contact with " + collisionInfo.transform.name);
+        // print("No longer in contact with " + collisionInfo.transform.name);
         isGrounded = false;
     }
 
@@ -153,14 +162,14 @@ public class RatMovement : MonoBehaviour
             RatManager.isJumping = true;
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
-            
+
         }
-		if (Input.GetKeyDown(KeyCode.Space) && RatManager.isGodMode)
-		{
-			isGrounded = false;
-			GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
-			
-		}
+        if (Input.GetKeyDown(KeyCode.Space) && RatManager.isGodMode)
+        {
+            isGrounded = false;
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+
+        }
     }
 
     private void Move(float horizontal, float vertical)
@@ -177,7 +186,7 @@ public class RatMovement : MonoBehaviour
                 newPosition += transform.right.normalized * horizontal * movementSpeed * Time.deltaTime;
                 GetComponent<Rigidbody>().MovePosition(transform.position + newPosition);
             }
-            else 
+            else
             {
                 RatManager.isWalking = false;
             }
@@ -185,19 +194,23 @@ public class RatMovement : MonoBehaviour
 
     }
 
-	private void Attack(){
-		if (Input.GetMouseButtonDown(0)) {
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out hit)){
-				if (hit.collider.tag == "Enemy"){
-					hit.collider.enabled = false;
-					Destroy(hit.collider);
-				}
-			}
+    private void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag == "Enemy")
+                {
+                    hit.collider.enabled = false;
+                    Destroy(hit.collider);
+                }
+            }
 
-		}
-	}
+        }
+    }
 
     private void Turn(float inputSignal)
     {
@@ -205,21 +218,26 @@ public class RatMovement : MonoBehaviour
         transform.Rotate(transform.up * angle);
     }
 
-	private void GodModeToggle(){
-        if(!RatManager.isGodMode){
+    private void GodModeToggle()
+    {
+        if (!RatManager.isGodMode)
+        {
             movementSpeed = generalMovementSpeed;
-        } else {
+        }
+        else
+        {
             movementSpeed = godModeSpeed;
         }
-	}
+    }
 
-	public void ChangeSpeedToRageMode(){
-		movementSpeed = rageModeSpeed;
-	}
+    public void ChangeSpeedToRageMode()
+    {
+        movementSpeed = rageModeSpeed;
+    }
 
     private void RageModeDeactivate()
     {
         movementSpeed = generalMovementSpeed;
     }
-	
+
 }
