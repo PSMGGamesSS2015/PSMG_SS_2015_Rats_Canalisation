@@ -7,7 +7,7 @@ public class ShowLevel2 : MonoBehaviour {
     private Camera MainCamera;
     private Camera ShowLevel2Camera;
     private float lerp;
-    private float duration = 2;
+    public float duration = 2;
     private Vector3 camPos;
     private Quaternion camRot;
     private bool done1 = false;
@@ -17,10 +17,8 @@ public class ShowLevel2 : MonoBehaviour {
     private bool done5 = false;
     private bool done6 = false;
     private bool done7 = false;
-    private bool done8 = false;
-    private bool done9 = false;
     private Transform camera;
-    private Transform step1, step2, step3, step4, step5, step6, step7, step8;
+    private Transform step1, step2, step3, step4, step5, step6;
 
     void Awake()
     {
@@ -39,8 +37,6 @@ public class ShowLevel2 : MonoBehaviour {
         step4 = GameObject.Find("Level2CameraStep4").GetComponent<Transform>();
         step5 = GameObject.Find("Level2CameraStep5").GetComponent<Transform>();
         step6 = GameObject.Find("Level2CameraStep6").GetComponent<Transform>();
-        step7 = GameObject.Find("Level2CameraStep7").GetComponent<Transform>();
-        step8 = GameObject.Find("Level2CameraStep8").GetComponent<Transform>();
         camPos = camera.transform.position;
         camRot = camera.transform.rotation;
     }
@@ -124,37 +120,13 @@ public class ShowLevel2 : MonoBehaviour {
         }
         if (done7)
         {
-            lerp += Time.deltaTime / duration;
-            camera.position = Vector3.Lerp(step6.position, step7.position, lerp);
-            camera.rotation = Quaternion.Lerp(step6.rotation, step7.rotation, lerp);
-            if (camera.position == step7.position)
-            {
-                done7 = false;
-                done8 = true;
-                lerp = 0;
-            }
-        }
-        if (done8)
-        {
-            lerp += Time.deltaTime / duration;
-            camera.position = Vector3.Lerp(step7.position, step8.position, lerp);
-            camera.rotation = Quaternion.Lerp(step7.rotation, step8.rotation, lerp);
-            if (camera.position == step8.position)
-            {
-                done8 = false;
-                done9 = true;
-                lerp = 0;
-            }
-        }
-        if (done9)
-        {
             StartCoroutine(switchBackToMainCamera());
         }
     }
 
     IEnumerator switchBackToMainCamera()
     {
-        done9 = false;
+        done7 = false;
 
         yield return new WaitForSeconds(1);
 
