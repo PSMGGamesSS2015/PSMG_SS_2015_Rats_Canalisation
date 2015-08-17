@@ -11,7 +11,7 @@ public class Attributes : MonoBehaviour {
 	public int timeToHeal = 10; //in seconds
 	private static int normalHealing = 1;
 	private static int betterHealing = 2;
-	public int timeToDropHungerOneValue = 10; //in seconds
+	public int timeToDropHungerOneValue = 15; //in seconds
 	private float pastHungerTime = 0;
 	public int looseLifeWhileHungry = 2;
 	
