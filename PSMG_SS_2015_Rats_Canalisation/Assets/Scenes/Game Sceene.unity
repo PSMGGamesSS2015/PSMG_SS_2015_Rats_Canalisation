@@ -28745,7 +28745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490486, guid: 6f5d614d88ddead4b85c639c13266abb, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 490486, guid: 6f5d614d88ddead4b85c639c13266abb, type: 2}
       propertyPath: m_LocalScale.x
@@ -40737,7 +40737,7 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with wall 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6404028, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -42294,7 +42294,7 @@ RectTransform:
   - {fileID: 472370558}
   - {fileID: 435928290}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -45115,6 +45115,7 @@ Transform:
   - {fileID: 505244352}
   - {fileID: 249354290}
   - {fileID: 966465458}
+  - {fileID: 956115786}
   m_Father: {fileID: 656514365}
   m_RootOrder: 3
 --- !u!1001 &806461713
@@ -49539,7 +49540,7 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Wall with roof 30
       objectReference: {fileID: 0}
-    - target: {fileID: 6404028, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -52380,7 +52381,7 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with wall
       objectReference: {fileID: 0}
-    - target: {fileID: 6404028, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -52922,7 +52923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428194, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 13615216, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_Radius
@@ -53346,6 +53347,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956110268}
   m_Mesh: {fileID: 4300000, guid: d902791002144f74a84e21b5abd1d754, type: 3}
+--- !u!1001 &956115785
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 805180129}
+    m_Modifications:
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106709
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 108794, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Name
+      value: UNITY Floor with two walls 6 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &956115786 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+  m_PrefabInternal: {fileID: 956115785}
 --- !u!1001 &957278331
 Prefab:
   m_ObjectHideFlags: 0
@@ -87009,6 +87068,52 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 475520, guid: e09303a2a801c58419b7d255b74e93be, type: 2}
   m_PrefabInternal: {fileID: 870620999}
+--- !u!1001 &1591669321
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.6400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106709
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108794, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Name
+      value: GameObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1592018613 stripped
 Transform:
   m_PrefabParentObject: {fileID: 472114, guid: 8a21f52f4f918aa46885860ad594dad7, type: 2}
@@ -95387,7 +95492,7 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with wall 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6404028, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
