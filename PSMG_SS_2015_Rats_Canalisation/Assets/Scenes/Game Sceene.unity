@@ -67735,7 +67735,12 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Wall with floor 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1263130994 stripped
@@ -74123,6 +74128,22 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 475520, guid: e09303a2a801c58419b7d255b74e93be, type: 2}
   m_PrefabInternal: {fileID: 269494113}
+--- !u!1 &1377371444 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 171536, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+  m_PrefabInternal: {fileID: 1261016828}
+--- !u!64 &1377371445
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377371444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1380244949
 Prefab:
   m_ObjectHideFlags: 0
