@@ -5,9 +5,9 @@ public class Rotor : MonoBehaviour {
 	private bool active = true;
 	private int smooth = 20;
 	public int rotationSpeed = 2;
-	public float smallDistance = 1f;
+	public float Distance = 5f;
 	public float middleDistance = 3f;
-	public float bigDistance = 5f;
+	public float bigDistance = 1f;
 	
 	// Use this for initialization
 	void Start () {
@@ -22,33 +22,34 @@ public class Rotor : MonoBehaviour {
 	
 	void FixedUpdate() {
 		if (active) {
-			transform.Rotate (Vector3.up * smooth * rotationSpeed * Time.deltaTime);
+			transform.Rotate (Vector3.up * smooth * -rotationSpeed * Time.deltaTime);
+			checkHowNear ();
 		}
-		//checkHowNear ();
 	}
 
 	 void checkHowNear(){
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		Debug.Log (Vector3.Distance (transform.position, player.transform.position));
-		if (Vector3.Distance (transform.position, player.transform.position) <= smallDistance) {	
-			turnUpVolume (smallDistance * 0.1f);
-		} else if (Vector3.Distance (transform.position, player.transform.position) <= middleDistance) {	
-			turnUpVolume (middleDistance * 0.1f);
-		} else if (Vector3.Distance (transform.position, player.transform.position) <= bigDistance) {
-			turnUpVolume (bigDistance * 0.1f);
-		} else {
-			//turnUpVolume(0);
+		float distance = Vector3.Distance (transform.position, player.transform.position);
+		if (distance <= Distance) {	
+			turnUpVolume (Distance * 0.1f);
 		}
 	}
 
 	void turnUpVolume (float volume){
-		GameObject.FindGameObjectWithTag("rotorsound").GetComponent<AudioSource> ().volume = volume;
-		/*if(!GameObject.FindGameObjectWithTag ("rotorsound").GetComponent<AudioSource> ().isPlaying)
-		GameObject.FindGameObjectWithTag ("rotorsound").GetComponent<AudioSource> ().Play ();*/
+		if (!GameObject.FindGameObjectWithTag ("rotorsound").GetComponent<AudioSource> ().isPlaying) {
+			GameObject.FindGameObjectWithTag ("rotorsound").GetComponent<AudioSource> ().Play ();
+			GameObject.FindGameObjectWithTag("rotorsound").GetComponent<AudioSource> ().volume = volume;
+		}
+	}
+
+	void turnOff(){
+		GameObject.FindGameObjectWithTag ("rotorsound").GetComponent<AudioSource> ().Stop ();
 	}
 	
 	public void changeRotorActiveState(bool activeState) {
 		active = activeState;
+		if (activeState == false)
+			turnOff ();
 	}
 	
 }
