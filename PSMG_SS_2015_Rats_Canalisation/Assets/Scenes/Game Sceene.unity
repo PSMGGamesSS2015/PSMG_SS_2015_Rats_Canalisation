@@ -11879,6 +11879,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2393772, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
@@ -15258,6 +15262,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Wall with floor 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2393772, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
@@ -37687,6 +37695,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with wall 11
       objectReference: {fileID: 0}
+    - target: {fileID: 2393772, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
@@ -37992,6 +38004,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Wall with floor 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2393772, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0
@@ -45519,7 +45535,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: d413cedabe55b7b4e9a9911883c3b8a9, type: 2}
+  - {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -52915,7 +52931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428194, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 13615216, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_Radius
@@ -69355,6 +69371,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with two walls 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2392236, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
   m_IsPrefabParent: 0
@@ -106201,6 +106221,14 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Floor with two walls 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2392236, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
+    - target: {fileID: 2387168, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
   m_IsPrefabParent: 0
@@ -106605,6 +106633,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with two walls 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2392236, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae2fc6f18ba9fb469b944e1b1bf87d5, type: 2}
   m_IsPrefabParent: 0
@@ -114720,6 +114752,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Roof with wall 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2393772, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 586969844c2bfcb49a3da09a9fbbea22, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603a96a0aa4d173439737db3e4435b22, type: 2}
   m_IsPrefabParent: 0

@@ -44,7 +44,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8426db2d7aaa3284b9e94cc1d319186a, type: 2}
+  - {fileID: 2100000, guid: 5dc3d74e7cb45444fab33f890d775fa5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -112,6 +112,7 @@ MonoBehaviour:
   maxHunger: 7
   timeToHeal: 10
   timeToDropHungerOneValue: 10
+  looseLifeWhileHungry: 2
 --- !u!114 &11482260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +132,7 @@ MonoBehaviour:
   isGrounded: 0
   isAtWall: 0
   godModeSpeed: 10
-  godModeActive: 0
+  rageModeSpeed: 5
   maxSlope: 60
 --- !u!136 &13615216
 CapsuleCollider:
@@ -152,7 +153,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5dc3d74e7cb45444fab33f890d775fa5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 121540}
