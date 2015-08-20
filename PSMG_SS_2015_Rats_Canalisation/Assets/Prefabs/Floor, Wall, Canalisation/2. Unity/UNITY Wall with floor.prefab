@@ -100,7 +100,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b6eab78a03e99a440b3b4f443fa6127a, type: 2}
+  - {fileID: 2100000, guid: 38fd80f0a187cd14bac2da72085e6205, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -124,7 +124,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1d7236e920c528d4badb044ae4abbb02, type: 2}
+  - {fileID: 2100000, guid: 3cfe7d2f535fc1141a13b4b9dd36fb85, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -163,7 +163,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: d902791002144f74a84e21b5abd1d754, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 91c6adcccad88e84fb20efb3e311e890, type: 3}
 --- !u!95 &9539808
 Animator:
   serializedVersion: 3
