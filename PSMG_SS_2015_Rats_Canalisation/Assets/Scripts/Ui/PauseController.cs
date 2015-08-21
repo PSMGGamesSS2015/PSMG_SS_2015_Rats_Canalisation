@@ -45,4 +45,20 @@ public class PauseController : MonoBehaviour {
         yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(1.5f));
         Time.timeScale = 1;
     }
+
+    public void exitApp()
+    {
+        Application.Quit();
+    }
+
+    public void GoToMainMenu()
+    {
+        isPaused = false;
+        Application.LoadLevel(0);
+    }
+
+    public void resetTimeScale()
+    {
+        Time.timeScale = 1;
+    }
 }
