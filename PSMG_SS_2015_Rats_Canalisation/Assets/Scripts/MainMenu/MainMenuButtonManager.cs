@@ -20,6 +20,12 @@ public class MainMenuButtonManager : MonoBehaviour {
 
     public void StartGame()
     {
+        StartCoroutine(StartGameWithDelay());
+    }
+
+    IEnumerator StartGameWithDelay()
+    {
+        yield return new WaitForSeconds(.5f);
         Application.LoadLevel(1);
     }
 }
