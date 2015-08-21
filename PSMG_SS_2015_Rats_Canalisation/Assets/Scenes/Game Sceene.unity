@@ -28760,7 +28760,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490486, guid: 6f5d614d88ddead4b85c639c13266abb, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 490486, guid: 6f5d614d88ddead4b85c639c13266abb, type: 2}
       propertyPath: m_LocalScale.x
@@ -52969,7 +52969,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428194, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 13615216, guid: 7e37621cab9069a48906c6b1b2d9b4b4, type: 2}
       propertyPath: m_Radius
