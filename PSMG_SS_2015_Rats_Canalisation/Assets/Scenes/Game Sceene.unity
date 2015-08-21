@@ -11308,6 +11308,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.05833924
       objectReference: {fileID: 0}
+    - target: {fileID: 2357170, guid: e24c06e7c747b2b4e95130dd836ec8f0, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e24c06e7c747b2b4e95130dd836ec8f0, type: 2}
   m_IsPrefabParent: 0
@@ -19361,6 +19365,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.058339
       objectReference: {fileID: 0}
+    - target: {fileID: 2357170, guid: e24c06e7c747b2b4e95130dd836ec8f0, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e24c06e7c747b2b4e95130dd836ec8f0, type: 2}
   m_IsPrefabParent: 0
@@ -32440,6 +32448,10 @@ Prefab:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2388226, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d82ee618c0ca1fa4987551db98ac6302, type: 2}
   m_IsPrefabParent: 0
@@ -86220,6 +86232,10 @@ Prefab:
       propertyPath: m_Name
       value: UNITY Round grid to Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2379178, guid: 80ebb59123123d54f905369571e77f76, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80ebb59123123d54f905369571e77f76, type: 2}
   m_IsPrefabParent: 0
@@ -94144,7 +94160,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0d69ab56cdff8ab4393df001723fa12a, type: 2}
+  - {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -98299,7 +98315,7 @@ Prefab:
     - target: {fileID: 2335420, guid: 2fd2e70f1455b7143b1b03668a5c10bb, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79857ea801c89ff4e9a93e4fdd3f5e13, type: 2}
+      objectReference: {fileID: 2100000, guid: e0442fc5e8b416448a25cad18520189e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fd2e70f1455b7143b1b03668a5c10bb, type: 2}
   m_IsPrefabParent: 0
@@ -101732,6 +101748,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2379178, guid: 80ebb59123123d54f905369571e77f76, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a75e6deb8b1e76f4c88d633dea483f7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80ebb59123123d54f905369571e77f76, type: 2}
   m_IsPrefabParent: 0
