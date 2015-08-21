@@ -6,9 +6,9 @@ public class MenuManager : MonoBehaviour {
     public MainMenu CurrentMenu;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         ShowMenu(CurrentMenu);
-	}
+	}       
 	
 	// Update is called once per frame
 	void Update () {
