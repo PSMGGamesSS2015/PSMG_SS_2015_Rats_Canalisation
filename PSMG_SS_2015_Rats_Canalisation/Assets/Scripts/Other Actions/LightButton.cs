@@ -13,12 +13,21 @@ public class LightButton : MonoBehaviour {
 	private GameObject button;
 	public int showTime = 1;
 	private bool isShowing = false;
-	
+    private Camera showCamera;
+    private Camera mainCamera;
+
+
+    void Awake()
+    {
+        showCamera = GameObject.Find("Level2LightShowCamera").GetComponent<Camera>();
+        showCamera.enabled = false;
+    }
 	// Use this for initialization
 	void Start () {
 		button = GameObject.FindGameObjectWithTag ("PressButton");
 		button.GetComponent<CanvasGroup>().alpha = 0f;
 		transform.GetComponent<ParticleSystem>().enableEmission = false;
+        mainCamera = GameObject.Find("FirstPerson").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -37,13 +46,26 @@ public class LightButton : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E)) {
 			GameObject.FindGameObjectWithTag ("fusersound").GetComponent<AudioSource> ().Play ();
 			DoStuffWithButtons();
-			DoStuffWithTarget(OnLight, true);
-			if(OffLight1 != null)DoStuffWithTarget(OffLight1, false);
-			if(OffLight2 != null)DoStuffWithTarget(OffLight2, false);
-			if(OffLight3 != null)DoStuffWithTarget(OffLight3, false);
+            StartCoroutine(cameraRoutine());
 		}
 		if(!isShowing)StartCoroutine (text ());
 	}
+
+    IEnumerator cameraRoutine()
+    {
+        ShowLevel1.isInCameraOverview = true;
+        mainCamera.enabled = false;
+        showCamera.enabled = true;
+        DoStuffWithTarget(OnLight, true);
+        if (OffLight1 != null) DoStuffWithTarget(OffLight1, false);
+        if (OffLight2 != null) DoStuffWithTarget(OffLight2, false);
+        if (OffLight3 != null) DoStuffWithTarget(OffLight3, false);
+        yield return new WaitForSeconds(5f);
+        ShowLevel1.isInCameraOverview = false;
+        mainCamera.enabled = true;
+        showCamera.enabled = false;
+        
+    }
 	
 	private void playerIsFar(){
 		button.GetComponent<CanvasGroup>().alpha = 0f;
