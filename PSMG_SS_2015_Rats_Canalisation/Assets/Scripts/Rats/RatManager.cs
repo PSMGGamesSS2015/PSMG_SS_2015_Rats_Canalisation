@@ -8,6 +8,7 @@ public class RatManager : MonoBehaviour {
     public static bool isWalking = false;
     public static bool isRunning = false;
     public static bool isJumping = false;
+    public static bool isDead = false;
 
     public delegate void GodModeToggle();
     public static event GodModeToggle OnGodModeToggle;
@@ -75,11 +76,22 @@ public class RatManager : MonoBehaviour {
     {
         if ((Attributes.health <= 0 && !isGodMode) || transform.position.y < -10)
         {
-            OnDie();
-            isRageMode = false;
-            GoToLastCheckPoint();
-            transform.GetComponent<ParticleSystem>().enableEmission = false;
+            if (!isDead)
+            {
+                OnDie();
+                isRageMode = false;
+                isDead = true;
+                transform.GetComponent<ParticleSystem>().enableEmission = false;
+                StartCoroutine(RespawnWithDelay());
+            }
         }
+    }
+
+    IEnumerator RespawnWithDelay()
+    {
+        yield return new WaitForSeconds(3);
+        isDead = false;
+        GoToLastCheckPoint();
     }
 
     public void GoToLastCheckPoint()

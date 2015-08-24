@@ -7,6 +7,7 @@ public class RatAnimationController : MonoBehaviour {
     private bool isWalking = false;
     private bool isJumping = false;
     private bool isRunning = false;
+    private bool isDead = false;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,12 @@ public class RatAnimationController : MonoBehaviour {
         {
             anim.SetBool("isRunning", RatManager.isRunning);
             isRunning = RatManager.isRunning;
+        }
+
+        if (isDead != RatManager.isDead)
+        {
+            anim.SetBool("isDead", RatManager.isDead);
+            isDead = RatManager.isDead;
         }
      
 

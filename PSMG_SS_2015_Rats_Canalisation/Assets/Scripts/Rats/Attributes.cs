@@ -38,7 +38,7 @@ public class Attributes : MonoBehaviour {
             }
             else
             {
-                AutomaticalLifeHeal();
+                if (!RatManager.isDead) AutomaticalLifeHeal();
             }
 		}
 		if (pastHungerTime > timeToDropHungerOneValue ) 
@@ -55,7 +55,7 @@ public class Attributes : MonoBehaviour {
                     }
                     else
                     {
-                        ChangeLife(-looseLifeWhileHungry);
+                        if (!RatManager.isDead) ChangeLife(-looseLifeWhileHungry);
                         pastHungerTime -= timeToDropHungerOneValue;
                     }
                 }
@@ -73,12 +73,24 @@ public class Attributes : MonoBehaviour {
 
     void OnEnable()
     {
-        RatManager.OnDie += setFullStats;
+        RatManager.OnDie += ResetStats;
     }
 
     void OnDisable()
     {
-        RatManager.OnDie -= setFullStats;
+        RatManager.OnDie -= ResetStats;
+    }
+
+    public void ResetStats()
+    {
+        health = 0;
+        StartCoroutine(SetFullStatsWithDelay());
+    }
+
+    IEnumerator SetFullStatsWithDelay()
+    {
+        yield return new WaitForSeconds(3);
+        setFullStats();
     }
 
     public void setFullStats()
@@ -116,16 +128,21 @@ public class Attributes : MonoBehaviour {
 	}
 	
 	public void ChangeLife (int value){
-		if (value < 0) {
-			OnDamageGotten();
-		}
-		if (value + health > maxHealth)
+        if (!RatManager.isDead)
         {
-            health = maxHealth;
-        } else{
-            health += value;
-        }
-			
+            if (value < 0)
+            {
+                OnDamageGotten();
+            }
+            if (value + health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            else
+            {
+                health += value;
+            }
+        }			
 	}
 		
 	public int GetCurrentHunger(){

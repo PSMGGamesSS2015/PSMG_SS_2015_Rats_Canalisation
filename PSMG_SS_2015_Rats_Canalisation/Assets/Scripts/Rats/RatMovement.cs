@@ -27,7 +27,7 @@ public class RatMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!ShowLevel1.isInCameraOverview)
+        if (!ShowLevel1.isInCameraOverview && !RatManager.isDead)
         {
             Jump();
             Attack();
@@ -49,7 +49,7 @@ public class RatMovement : MonoBehaviour
         float horizontalMouseInput = Input.GetAxis("Mouse X");
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
-        if (!ShowLevel1.isInCameraOverview)
+        if (!ShowLevel1.isInCameraOverview && !RatManager.isDead)
         {
             Turn(horizontalMouseInput);
             if (!GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().firstPersonActive())
