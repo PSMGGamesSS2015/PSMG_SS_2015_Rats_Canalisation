@@ -33,8 +33,10 @@ public class GegnerMovement : MonoBehaviour {
 	
 	//Do stuff if player is near
 	void playerIsNear (GameObject player){
-		transform.position += (player.transform.position - transform.position).normalized * movementSpeed * Time.deltaTime;
-		transform.LookAt(player.transform);
+		Vector3 followLight = (player.transform.position - transform.position).normalized * movementSpeed * Time.deltaTime;
+		followLight.y = 0.0f;
+		transform.position += followLight;
+		transform.LookAt(new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z));
 	}
 	
 	//Do stuff if collision with player
