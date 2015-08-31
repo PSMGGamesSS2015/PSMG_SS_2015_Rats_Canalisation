@@ -43,8 +43,7 @@ public class PassiveEnemy : MonoBehaviour {
 	
 	//Do stuff if player is near
 	void playerIsNear (){
-		transform.rotation = Quaternion.Slerp(transform.rotation,
-		                                      Quaternion.LookRotation(player.transform.position - transform.position), rotationSpeed*Time.deltaTime);
+		transform.LookAt (player.transform);
 		transform.position += transform.forward * movementSpeed * Time.deltaTime;
 	}
 	
