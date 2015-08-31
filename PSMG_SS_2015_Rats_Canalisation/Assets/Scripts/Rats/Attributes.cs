@@ -89,7 +89,7 @@ public class Attributes : MonoBehaviour {
 
     IEnumerator SetFullStatsWithDelay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         setFullStats();
     }
 
